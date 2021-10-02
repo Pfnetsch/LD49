@@ -23,7 +23,7 @@ public class HandleIngredients : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0)) //clicking the button
         {
             if (_ingredientUnderMouse == null)
             {             
@@ -48,7 +48,7 @@ public class HandleIngredients : MonoBehaviour
                 print(_ingredientUnderMouse.transform.position);
             }
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0)) //releasing the button
         {
             if (_ingredientUnderMouse != null)
             {
@@ -73,5 +73,11 @@ public class HandleIngredients : MonoBehaviour
                 _ingredientUnderMouse = null;
             }
         }
+    }
+
+    void showInfo(Ingredient ingredient)
+    {
+        PopUpSystem pop = GetComponent<PopUpSystem>();
+        pop.PopUp(ingredient.name, ingredient.description);
     }
 }

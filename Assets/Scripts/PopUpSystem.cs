@@ -17,4 +17,8 @@ public class PopUpSystem : MonoBehaviour
         pupupDescription.text = description;
         animator.SetTrigger("open");
     }
+    public void PopDown()
+    {
+        animator.SetTrigger("close");
+    }
 }
