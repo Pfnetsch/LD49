@@ -9,6 +9,7 @@ public class HandleIngredients : MonoBehaviour
     public List<GameObject> PrepPositions;
 
     private Ingredient _ingredientUnderMouse;
+    private PopUpSystem _pop;
 
     private Vector3 _dragOffset;
 
@@ -47,12 +48,21 @@ public class HandleIngredients : MonoBehaviour
                     }
                 }
                 else
+                _pop = GetComponent<PopUpSystem>();
+
+                if (ingredientHit)
                 {
                     _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
+
+                    //popup handling
+
+                    _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.description, _ingredientUnderMouse.unlocks);
+
 
                     if (_ingredientUnderMouse != null)
                     {
                         _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
+
                         print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
                     }
                 }
@@ -68,7 +78,13 @@ public class HandleIngredients : MonoBehaviour
         }
 
         if (Input.GetMouseButtonUp(0))
+                print(_ingredientUnderMouse.transform.position);
+                _pop.transform.position = mousePos + _dragOffset;
+            }
+        }
+        else if (Input.GetMouseButtonUp(0)) //releasing the button
         {
+            _pop.PopDown();
             if (_ingredientUnderMouse != null)
             {
                 if (PrepArea.GetComponent<Collider2D>().OverlapPoint(mousePos))
