@@ -8,6 +8,8 @@ public class HandleIngredients : MonoBehaviour
 
     private GameObject _ingredientUnderMouse;
 
+    private float _tempZpos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,14 +34,21 @@ public class HandleIngredients : MonoBehaviour
                     if (ingredientCode != null)
                     {
                         _ingredientUnderMouse = ingredientHit.transform.gameObject;
+                        _tempZpos = ingredientCode.transform.position.z;
                         print("Click on Intredient with type: " + ingredientCode.Type);
                     }         
-                }                 
+                }
+            }
+            else
+            {
+                Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _tempZpos));
+                _ingredientUnderMouse.transform.position = point;
+                print(point);
             }
         }
         else
         {
-
+            _ingredientUnderMouse = null;
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 822284025743467064}
   - component: {fileID: 822284025743467065}
   - component: {fileID: 822284025743467067}
-  - component: {fileID: 1095852168}
+  - component: {fileID: 3193115144587420639}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
---- !u!61 &1095852168
+--- !u!61 &3193115144587420639
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,12 +114,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 32, y: 32}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
