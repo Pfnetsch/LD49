@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ingredient
+    uniqueID: 1808139877
+    locked: 0
+  - name: Cauldron
+    uniqueID: 3123942537
+    locked: 0
+  - name: UI
+    uniqueID: 3553294769
+    locked: 0
