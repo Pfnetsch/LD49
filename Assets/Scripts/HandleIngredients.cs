@@ -8,7 +8,7 @@ public class HandleIngredients : MonoBehaviour
 
     private GameObject _ingredientUnderMouse;
 
-    private float _tempZpos;
+    private Vector3 _dragOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +21,11 @@ public class HandleIngredients : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
             if (_ingredientUnderMouse == null)
-            {
-                Vector2 origin = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            {             
+                Vector2 origin = new Vector2(mousePos.x, mousePos.y);
 
                 RaycastHit2D ingredientHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
 
@@ -34,16 +36,15 @@ public class HandleIngredients : MonoBehaviour
                     if (ingredientCode != null)
                     {
                         _ingredientUnderMouse = ingredientHit.transform.gameObject;
-                        _tempZpos = ingredientCode.transform.position.z;
+                        _dragOffset = ingredientCode.transform.position - mousePos;
                         print("Click on Intredient with type: " + ingredientCode.Type);
                     }         
                 }
             }
             else
             {
-                Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _tempZpos));
-                _ingredientUnderMouse.transform.position = point;
-                print(point);
+                _ingredientUnderMouse.transform.position = mousePos + _dragOffset;
+                print(_ingredientUnderMouse.transform.position);
             }
         }
         else
