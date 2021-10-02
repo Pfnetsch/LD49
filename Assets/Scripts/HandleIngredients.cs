@@ -34,6 +34,7 @@ public class HandleIngredients : MonoBehaviour
                 if (ingredientHit)
                 {
                     _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
+                    showInfo(_ingredientUnderMouse.id, _ingredientUnderMouse.description);
 
                     if (_ingredientUnderMouse != null)
                     {
@@ -75,9 +76,9 @@ public class HandleIngredients : MonoBehaviour
         }
     }
 
-    void showInfo(Ingredient ingredient)
+    void showInfo(string name, string description)
     {
         PopUpSystem pop = GetComponent<PopUpSystem>();
-        pop.PopUp(ingredient.name, ingredient.description);
+        pop.PopUp(name, description);
     }
 }
