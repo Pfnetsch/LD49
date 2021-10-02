@@ -10,6 +10,9 @@ public class Ingredient : MonoBehaviour
         Liquid,
         Solid
     }
+    public string id;
+    public string description;
+    public List<string> unlocks;
 
     public IngredientType Type;
 
