@@ -12,6 +12,12 @@ public class HandleIngredients : MonoBehaviour
 
     private Vector3 _dragOffset;
 
+    private Ingredient herpOnPrep;
+    private Ingredient fluidOnPrep;
+    private Ingredient solidOnPrep;
+
+    private bool startMixing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +29,24 @@ public class HandleIngredients : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            if (_ingredientUnderMouse == null)
-            {             
-                Vector2 origin = new Vector2(mousePos.x, mousePos.y);
+            Vector2 origin = new Vector2(mousePos.x, mousePos.y);
+            RaycastHit2D ingredientHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
 
-                RaycastHit2D ingredientHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
+            if (ingredientHit)
+            {
+                if (ingredientHit.transform.CompareTag("Loeffel"))
+                {
+                    //Debug.Log("Loeffel");
 
-                if (ingredientHit)
+                    if (herpOnPrep != null && fluidOnPrep != null && solidOnPrep != null)
+                    {
+                        Debug.Log("Loeffel");
+                        startMixing = true;
+                    }
+                }
+                else
                 {
                     _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
 
@@ -39,16 +54,20 @@ public class HandleIngredients : MonoBehaviour
                     {
                         _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
                         print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
-                    }         
+                    }
                 }
             }
-            else
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            if (_ingredientUnderMouse != null)
             { 
                 _ingredientUnderMouse.transform.position = mousePos + _dragOffset;
-                print(_ingredientUnderMouse.transform.position);
             }
         }
-        else if (Input.GetMouseButtonUp(0))
+
+        if (Input.GetMouseButtonUp(0))
         {
             if (_ingredientUnderMouse != null)
             {
@@ -58,12 +77,15 @@ public class HandleIngredients : MonoBehaviour
                     {
                         case Ingredient.IngredientType.Herb:
                             _ingredientUnderMouse.transform.position = PrepPositions[0].transform.position;
+                            herpOnPrep = _ingredientUnderMouse;
                             break;
                         case Ingredient.IngredientType.Liquid:
                             _ingredientUnderMouse.transform.position = PrepPositions[1].transform.position;
+                            fluidOnPrep = _ingredientUnderMouse;
                             break;
                         case Ingredient.IngredientType.Solid:
                             _ingredientUnderMouse.transform.position = PrepPositions[2].transform.position;
+                            solidOnPrep = _ingredientUnderMouse;
                             break;
                         default:
                             break;
