@@ -17,7 +17,7 @@ public class HandleIngredients : MonoBehaviour
     private Ingredient fluidOnPrep;
     private Ingredient solidOnPrep;
 
-    private bool startMixing = false;
+    private bool _startMixing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,11 @@ public class HandleIngredients : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_startMixing)
+        {
+
+        }
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
@@ -44,24 +49,22 @@ public class HandleIngredients : MonoBehaviour
                     if (herpOnPrep != null && fluidOnPrep != null && solidOnPrep != null)
                     {
                         Debug.Log("Loeffel");
-                        startMixing = true;
+                        _startMixing = true;
                     }
                 }
-                else
+
                 _pop = GetComponent<PopUpSystem>();
 
                 if (ingredientHit)
                 {
                     _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
 
-                    //popup handling
-
-                    _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.description, _ingredientUnderMouse.unlocks);
-
-
                     if (_ingredientUnderMouse != null)
                     {
                         _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
+
+                        //popup handling
+                        _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.description, _ingredientUnderMouse.unlocks);
 
                         print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
                     }
@@ -72,19 +75,17 @@ public class HandleIngredients : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (_ingredientUnderMouse != null)
-            { 
+            {
                 _ingredientUnderMouse.transform.position = mousePos + _dragOffset;
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0))
                 print(_ingredientUnderMouse.transform.position);
                 _pop.transform.position = mousePos + _dragOffset;
             }
         }
-        else if (Input.GetMouseButtonUp(0)) //releasing the button
+
+        if (Input.GetMouseButtonUp(0)) //releasing the button
         {
             _pop.PopDown();
+
             if (_ingredientUnderMouse != null)
             {
                 if (PrepArea.GetComponent<Collider2D>().OverlapPoint(mousePos))
