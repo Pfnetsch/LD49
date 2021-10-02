@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class HandleIngredients : MonoBehaviour
 {
+    public List<Ingredient> AllIngredients;
+
     private GameObject _ingredientUnderMouse;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
