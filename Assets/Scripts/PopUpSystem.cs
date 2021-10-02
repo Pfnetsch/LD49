@@ -10,7 +10,7 @@ public class PopUpSystem : MonoBehaviour
     public TMP_Text popupName;
     public TMP_Text pupupDescription;
 
-    public void PopUp(string name, string description)
+    public void PopUp(string name, string description, List<string> unlocks)
     {
         popUpBox.SetActive(true);
         popupName.text = name;
@@ -19,6 +19,8 @@ public class PopUpSystem : MonoBehaviour
     }
     public void PopDown()
     {
+        Debug.Log("trying to close window. Maybe works");
+        popUpBox.SetActive(false);
         animator.SetTrigger("close");
     }
 }

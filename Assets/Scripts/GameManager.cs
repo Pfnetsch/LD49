@@ -15,10 +15,13 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            List<string> unlocks = new List<string>();
+            unlocks.Add("foo");
+            unlocks.Add("bar");
             Debug.Log("Space has been pressed");
             //PopUpSystem pop = GameObject
             PopUpSystem pop = GetComponent<PopUpSystem>();
-            pop.PopUp("busen", "busen sin schon ziemlich nice!");
+            pop.PopUp("busen", "busen sin schon ziemlich nice!", unlocks);
         }
 
 

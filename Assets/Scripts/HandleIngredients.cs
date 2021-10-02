@@ -9,6 +9,7 @@ public class HandleIngredients : MonoBehaviour
     public List<GameObject> PrepPositions;
 
     private Ingredient _ingredientUnderMouse;
+    private PopUpSystem _pop;
 
     private Vector3 _dragOffset;
 
@@ -31,14 +32,21 @@ public class HandleIngredients : MonoBehaviour
 
                 RaycastHit2D ingredientHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
 
+                _pop = GetComponent<PopUpSystem>();
+
                 if (ingredientHit)
                 {
                     _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
-                    showInfo(_ingredientUnderMouse.id, _ingredientUnderMouse.description);
+
+                    //popup handling
+
+                    _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.description, _ingredientUnderMouse.unlocks);
+
 
                     if (_ingredientUnderMouse != null)
                     {
                         _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
+
                         print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
                     }         
                 }
@@ -47,10 +55,12 @@ public class HandleIngredients : MonoBehaviour
             { 
                 _ingredientUnderMouse.transform.position = mousePos + _dragOffset;
                 print(_ingredientUnderMouse.transform.position);
+                _pop.transform.position = mousePos + _dragOffset;
             }
         }
         else if (Input.GetMouseButtonUp(0)) //releasing the button
         {
+            _pop.PopDown();
             if (_ingredientUnderMouse != null)
             {
                 if (PrepArea.GetComponent<Collider2D>().OverlapPoint(mousePos))
@@ -74,11 +84,5 @@ public class HandleIngredients : MonoBehaviour
                 _ingredientUnderMouse = null;
             }
         }
-    }
-
-    void showInfo(string name, string description)
-    {
-        PopUpSystem pop = GetComponent<PopUpSystem>();
-        pop.PopUp(name, description);
     }
 }
