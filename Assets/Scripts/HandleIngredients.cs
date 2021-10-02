@@ -5,8 +5,10 @@ using UnityEngine;
 public class HandleIngredients : MonoBehaviour
 {
     public List<Ingredient> AllIngredients;
+    public GameObject PrepArea;
+    public List<GameObject> PrepPositions;
 
-    private GameObject _ingredientUnderMouse;
+    private Ingredient _ingredientUnderMouse;
 
     private Vector3 _dragOffset;
 
@@ -19,10 +21,10 @@ public class HandleIngredients : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if (Input.GetMouseButton(0))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
             if (_ingredientUnderMouse == null)
             {             
                 Vector2 origin = new Vector2(mousePos.x, mousePos.y);
@@ -31,25 +33,45 @@ public class HandleIngredients : MonoBehaviour
 
                 if (ingredientHit)
                 {
-                    Ingredient ingredientCode = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
+                    _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
 
-                    if (ingredientCode != null)
+                    if (_ingredientUnderMouse != null)
                     {
-                        _ingredientUnderMouse = ingredientHit.transform.gameObject;
-                        _dragOffset = ingredientCode.transform.position - mousePos;
-                        print("Click on Intredient with type: " + ingredientCode.Type);
+                        _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
+                        print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
                     }         
                 }
             }
             else
-            {
+            { 
                 _ingredientUnderMouse.transform.position = mousePos + _dragOffset;
                 print(_ingredientUnderMouse.transform.position);
             }
         }
-        else
+        else if (Input.GetMouseButtonUp(0))
         {
-            _ingredientUnderMouse = null;
+            if (_ingredientUnderMouse != null)
+            {
+                if (PrepArea.GetComponent<Collider2D>().OverlapPoint(mousePos))
+                {
+                    switch (_ingredientUnderMouse.Type)
+                    {
+                        case Ingredient.IngredientType.Herb:
+                            _ingredientUnderMouse.transform.position = PrepPositions[0].transform.position;
+                            break;
+                        case Ingredient.IngredientType.Liquid:
+                            _ingredientUnderMouse.transform.position = PrepPositions[1].transform.position;
+                            break;
+                        case Ingredient.IngredientType.Solid:
+                            _ingredientUnderMouse.transform.position = PrepPositions[2].transform.position;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                _ingredientUnderMouse = null;
+            }
         }
     }
 }

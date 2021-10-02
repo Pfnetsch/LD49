@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Cauldron : MonoBehaviour
 {
+    public enum CauldronStatus
+    {
+        Idle,
+        Bubbling
+    }
+
+    public CauldronStatus Status;
+
     // Start is called before the first frame update
     void Start()
     {
