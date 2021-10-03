@@ -7,10 +7,13 @@ public class TempControl : MonoBehaviour
 {
     private bool userHoldsLever;
 
+    private Cauldron _cauldron;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Find cauldron in scene
+        _cauldron = FindObjectOfType<Cauldron>();
     }
 
     // Update is called once per frame
@@ -51,14 +54,17 @@ public class TempControl : MonoBehaviour
             if (transform.rotation.z <= -0.33F)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, -90F));
+                if (_cauldron != null) _cauldron.Temperature = PotionDB.Temperature.Hot;
             }
             else if (transform.rotation.z >= 0.33F)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90F));
+                if (_cauldron != null) _cauldron.Temperature = PotionDB.Temperature.Cold;
             }
             else
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+                if (_cauldron != null) _cauldron.Temperature = PotionDB.Temperature.Moderate;
             }
         }
     }

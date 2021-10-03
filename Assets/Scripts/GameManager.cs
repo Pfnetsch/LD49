@@ -8,16 +8,21 @@ public class GameManager : MonoBehaviour
     {
         Idle,
         Combining,
-        Ready,
-        Crafting
+        Crafting,
+        PotionReady
     }
 
     public static GameState State = GameState.Idle;
 
+    public static Ingredient[] ActiveIngredients;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        // 0 is Herb
+        // 1 is Liquid
+        // 2 is Solid
+        ActiveIngredients = new Ingredient[3];
     }
 
     // Update is called once per frame
@@ -31,8 +36,5 @@ public class GameManager : MonoBehaviour
             PopUpSystem pop = GetComponent<PopUpSystem>();
             pop.PopUp("busen", "busen sin schon ziemlich nice!", unlocks);
         }
-
-
-
     }
 }
