@@ -14,8 +14,6 @@ public class HandleIngredients : MonoBehaviour
 
     private Vector3 _dragOffset;
 
-    private Ingredient[] ingredientsOnPrepPositions;
-
     private bool _startMixing = false;
     private float _routeIteration = 0f;
 
@@ -24,10 +22,6 @@ public class HandleIngredients : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 0 is Herb
-        // 1 is Liquid
-        // 2 is Solid
-        ingredientsOnPrepPositions = new Ingredient[3];
         _pop = GetComponent<PopUpSystem>();
     }
 
@@ -37,16 +31,16 @@ public class HandleIngredients : MonoBehaviour
         //check if crafting has finished and reset everythign back to idle states
         if (_routeIteration >= 1)
         {
-            GameManager.State = GameManager.GameState.Idle;
+            GameManager.State = GameManager.GameState.PotionReady;
             _routeIteration = 0;
-            ingredientsOnPrepPositions[0] = null;
-            ingredientsOnPrepPositions[1] = null;
-            ingredientsOnPrepPositions[2] = null;
+            //ingredientsOnPrepPositions[0] = null;
+            //ingredientsOnPrepPositions[1] = null;
+            //ingredientsOnPrepPositions[2] = null;
             _startMixing = false;
         }
 
         //update game state when on of the ingredients is in the cauldron
-        if((ingredientsOnPrepPositions[0] != null || ingredientsOnPrepPositions[1] != null || ingredientsOnPrepPositions[2] != null) && GameManager.State == GameManager.GameState.Idle)
+        if((GameManager.ActiveIngredients[0] != null || GameManager.ActiveIngredients[1] != null || GameManager.ActiveIngredients[2] != null) && GameManager.State == GameManager.GameState.Idle)
         {
             GameManager.State = GameManager.GameState.Combining;
         }
@@ -59,7 +53,7 @@ public class HandleIngredients : MonoBehaviour
 
                 Vector2 _positionOnRoute = Mathf.Pow(1 - _routeIteration, 3) * pathPoints[1].position + 3 * Mathf.Pow(1 - _routeIteration, 2) * _routeIteration * pathPoints[2].position + 3 * (1 - _routeIteration) * Mathf.Pow(_routeIteration, 2) * pathPoints[3].position + Mathf.Pow(_routeIteration, 3) * pathPoints[4].position;
 
-                ingredientsOnPrepPositions[i].transform.position = _positionOnRoute; // new Vector3(_positionOnRoute.x, _positionOnRoute.y, _herbOnPrep.transform.position.y);
+                GameManager.ActiveIngredients[i].transform.position = _positionOnRoute; // new Vector3(_positionOnRoute.x, _positionOnRoute.y, _herbOnPrep.transform.position.y);
             }
 
             _routeIteration += Time.deltaTime * AnimationSpeed;
@@ -77,15 +71,13 @@ public class HandleIngredients : MonoBehaviour
             {
                 if (ingredientHit.transform.CompareTag("Loeffel"))
                 {
-                    if (ingredientsOnPrepPositions[0] != null && ingredientsOnPrepPositions[1] != null && ingredientsOnPrepPositions[2] != null)
+                    if (GameManager.ActiveIngredients[0] != null && GameManager.ActiveIngredients[1] != null && GameManager.ActiveIngredients[2] != null)
                     {
                         Debug.Log("Loeffel");
                         _startMixing = true;
                         GameManager.State = GameManager.GameState.Crafting;
                     }
                 }
-
-
 
                 if (ingredientHit)
                 {
@@ -125,15 +117,15 @@ public class HandleIngredients : MonoBehaviour
                     {
                         case Ingredient.IngredientType.Herb:
                             _ingredientUnderMouse.transform.position = PrepPositions[0].transform.position;
-                            ingredientsOnPrepPositions[0] = _ingredientUnderMouse;
+                            GameManager.ActiveIngredients[0] = _ingredientUnderMouse;
                             break;
                         case Ingredient.IngredientType.Liquid:
                             _ingredientUnderMouse.transform.position = PrepPositions[1].transform.position;
-                            ingredientsOnPrepPositions[1] = _ingredientUnderMouse;
+                            GameManager.ActiveIngredients[1] = _ingredientUnderMouse;
                             break;
                         case Ingredient.IngredientType.Solid:
                             _ingredientUnderMouse.transform.position = PrepPositions[2].transform.position;
-                            ingredientsOnPrepPositions[2] = _ingredientUnderMouse;
+                            GameManager.ActiveIngredients[2] = _ingredientUnderMouse;
                             break;
                         default:
                             break;
