@@ -26,7 +26,7 @@ public class TempControl : MonoBehaviour
             Vector2 origin = new Vector2(mousePos.x, mousePos.y);
             RaycastHit2D ingredientHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
 
-            if (ingredientHit.transform.CompareTag("TempLever"))
+            if (ingredientHit && ingredientHit.transform.CompareTag("TempLever"))
             {
                 userHoldsLever = true;
             }

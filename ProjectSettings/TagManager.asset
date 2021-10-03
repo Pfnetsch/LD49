@@ -8,6 +8,8 @@ TagManager:
   - Loeffel
   - TempLever
   - Light
+  - MiniScroll
+  - Scroll
   layers:
   - Default
   - TransparentFX

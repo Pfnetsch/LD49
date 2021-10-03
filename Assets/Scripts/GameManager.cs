@@ -59,6 +59,25 @@ public class GameManager : MonoBehaviour
             PopUpSystem pop = GetComponent<PopUpSystem>();
             pop.PopUp("busen", "busen sin schon ziemlich nice!", unlocks);
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 origin = new Vector2(mousePos.x, mousePos.y);
+            RaycastHit2D ingredientHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
+
+            if (ingredientHit)
+            {
+                if (_scrollQuestAndHistory)
+                {
+
+                }
+                else if (ingredientHit.transform.CompareTag("MiniScroll"))
+                {
+                    _scrollQuestAndHistory.enabled = true;
+                }
+            }
+        }
     }
 
     (PotionDB.Potion, PotionDB.Quest) GetQuestForCurrentLevel()
