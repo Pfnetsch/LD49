@@ -34,10 +34,15 @@ public class HandleIngredients : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //check if crafting has finished
+        //check if crafting has finished and reset everythign back to idle states
         if (_routeIteration >= 1)
         {
             GameManager.State = GameManager.GameState.Idle;
+            _routeIteration = 0;
+            ingredientsOnPrepPositions[0] = null;
+            ingredientsOnPrepPositions[1] = null;
+            ingredientsOnPrepPositions[2] = null;
+            _startMixing = false;
         }
 
         //update game state when on of the ingredients is in the cauldron
