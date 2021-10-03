@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HandleIngredients : MonoBehaviour
 {
+    
     public List<Ingredient> AllIngredients;
     public GameObject PrepArea;
     public List<GameObject> PrepPositions;
@@ -62,6 +63,7 @@ public class HandleIngredients : MonoBehaviour
                     {
                         Debug.Log("Loeffel");
                         _startMixing = true;
+                        GameManager.State = GameManager.GameState.Crafting;
                     }
                 }
 

@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameState
+    {
+        Idle,
+        Crafting
+    }
+
+    public static GameState State = GameState.Idle;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -16,8 +24,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             List<string> unlocks = new List<string>();
-            unlocks.Add("foo");
-            unlocks.Add("bar");
             Debug.Log("Space has been pressed");
             //PopUpSystem pop = GameObject
             PopUpSystem pop = GetComponent<PopUpSystem>();
