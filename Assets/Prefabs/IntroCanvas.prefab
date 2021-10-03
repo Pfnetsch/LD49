@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 5372523629233985390}
   - component: {fileID: 5372523629233985391}
   m_Layer: 5
-  m_Name: PopUpBox
+  m_Name: NarratorBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
