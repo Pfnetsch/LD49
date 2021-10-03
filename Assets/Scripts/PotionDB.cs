@@ -26,6 +26,20 @@ public static class PotionDB
         Unstable
     }
 
+    public class Quest
+    {
+        public string Name;
+        public string Description;
+        public string Riddle;
+
+        public Quest(string name, string description, string riddle)
+        {
+            Name = name;
+            Description = description;
+            Riddle = riddle;
+        }
+    }
+
     public class Potion
     {
         // Ingredients
@@ -74,39 +88,25 @@ public static class PotionDB
     }
 
     // Apprentice, Magician and Master Postions
-    public static List<List<Potion>> Potions = new List<List<Potion>>()
+    public static List<List<(Potion, Quest)>> Potions = new List<List<(Potion, Quest)>>
     {
-        new List<Potion>()
+        new List<(Potion, Quest)>()
         {
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright)
+            (new Potion("Ti-Ti Seeds","Sunshine Drops","Pin-Pin Mushroom", Temperature.Hot, Luminosity.Both), new Quest("Love Potion", "The times of limp wood and dry desert are over with this potion. Not only will you have men, women and trolls at your feet, but you'll be able to meet all their desires too.", "Three ingredients are needed.\nOne, warm like tears of joy. The other, small like grapes. The last, big at the right moments.\nSome might say, love is always a heated topic")),
+            (new Potion("Shaman Jelly","Onion Tears","Horn of a Sea Bat", Temperature.Cold, Luminosity.Both), new Quest("Potion for your stepmother", "If the next family gathering is just around the corner and you need a quick way to keep your stepmother away from you for all eternity, let her take a sip of this potion. However, if she takes just one sip more, she'll be giving you sloppy kisses forever.", "Your stepmother is not your best buddy and you want to get rid of her in a legal way? Then follow these steps:\n 1. Ask her if she quit her diet because you don’t see any changes. This should do the crying.\n 2. Tell her about new magical formulas and technical components where her mind becomes pudding.\n 3. Make it clear that you don’t want to have an affair with her, because she doesn’t arouse your horn.\n 4. Say goodbye with a cool, half-hearted nod.")),
+            (new Potion("Wyvern Grass","Wolpertinger Milk","Cobaliti", Temperature.Moderate, Luminosity.Both), new Quest("Dr.Doolittle Potion", "Do you want to know what your cat is really up to, feel like a Disney princess, or simply want to look like a crazy person? This potion is the solution for you.", "All magical creatures are equally worthy.\nNo need for arguments or to ignore somebody.")),
         },
-
-        new List<Potion>()
+        new List<(Potion, Quest)>()
         {
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright)
+            (new Potion("Shaman Jelly","Wolpertinger Milk","Crystal Neko Scales", Temperature.Cold, Luminosity.Both), new Quest("Invisibility Potion", "Makes your skin invisible to any prying eyes. But pay attention to the time, after 23 hours the effect ends and you will be seen again as God created you.", "Three ingredients are needed.\nOne doesn’t want to be seen, but the other one does. And for the third one, nobody knows exactly what it is. But they have one thing in common: snootiness.")),
+            (new Potion("Wobbly Dobbly Herb","Glacier Water","Hair of Gunther", Temperature.Cold, Luminosity.Bright), new Quest("Dance or Die Potion", "In the early 5th century, Gunther and Merlin helped Arthur to win the war against the Saxons by torturing methods that were banned soon after development. With this potion your veins start to freeze and have to be in constant movement or else you die. Nowadays it leads to certain death, since the antidote was lost over time.", "A cold rush shoots through your body. Your blood freezing, you try to dance the cold away. Then you realise, only Gunther can dance hard enough to get you warm.")),
+            (new Potion("Angry Dandelion","Sunshine Drops","Mush-Mush Shell", Temperature.Hot, Luminosity.Both), new Quest("Harpy Potion", "When the work day is just horrible and you want to rip off your boss's head and fly away. Become a harpy for a few minutes and see what's possible without remorse and the ability to fly.", "Harpies are usually found where the mountains break through the clouds. \nTheir aggression harshly dependents on the time of the month, but is never zero.")),
         },
-
-        new List<Potion>()
+        new List<(Potion, Quest)>()
         {
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright),
-            new Potion("","","",Temperature.Cold, Luminosity.Bright)
+            (new Potion("Holy Beer Herb","Onion Tears","Cobaliti", Temperature.Cold, Luminosity.Bright), new Quest("Hercules Potion", "No jar of pickles and no ridiculously heavy piece of furniture will ever resist your mighty power. However, petting a puppy will also no longer be possible due to your incredible strength.", "One can only be obtained by the best craftsmen who can produce the elixir of life.\nTo obtain the other one something has to cry.\nAnd the last one can only be obtained by the bravest and most patient ones. And don’t forget to search for a waterfall.\nAll ingredients are familiar with the night, but there is a wish for change.")),
+            (new Potion("Tussilago Farfara","Lukewarm Lava","Pin-Pin Mushroom", Temperature.Moderate, Luminosity.Dark), new Quest("Potion of disappointment", "Generally considered a bad thing. However, if you are stuck in a desperate situation and you see no way out. Maybe a bit of disappointment can help you come to new conclusions.", "One´s always in the shadow of its hotter sibling.\nThe second is a disappointment of the third and vice versa.\nWhile the second has its hands put into its hips with a questioning look the other one is only erect around a different ingredient, which furthers the disagreement.\nIn the end everything balances itself out in the kettle and everything returns to normal.")),
+            (new Potion("Wobbly Dobbly Herb","Glacier Water","Trinity Stone", Temperature.Moderate, Luminosity.Bright), new Quest("Holy Moly Potion", "This potion makes the user holy in every sense. The perfect person. Humble, righteous and caring. Well… Or self-belittling, self-righteous and self-caring. Depends on the reasons for drinking it.", "Tales of holiness are often misleading. Quickly scrambled together after three beers in a decaying tavern. And often have a negative impact, if you don't take them in a light way.")),
         }
     };
 

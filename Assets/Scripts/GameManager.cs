@@ -34,10 +34,10 @@ public class GameManager : MonoBehaviour
         // 2 is Solid
         ActiveIngredients = new Ingredient[3];
 
-        // Retrieve first Potion
-        CurrentPotionTask = GetPotionForCurrentLevel();
+        // Retrieve first Quest
+        var quest = GetQuestForCurrentLevel();
 
-
+        CurrentPotionTask = quest.Item1;
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    PotionDB.Potion GetPotionForCurrentLevel()
+    (PotionDB.Potion, PotionDB.Quest) GetQuestForCurrentLevel()
     {
         int randomIndex = Random.Range(0, PotionDB.Potions[(int)Level].Count - 1);
 
