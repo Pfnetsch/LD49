@@ -2,17 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Database : MonoBehaviour
+public static class PotionDB
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum Temperature
     {
-        
+        Cold,
+        Moderate,
+        Hot
     }
 
-    // Update is called once per frame
-    void Update()
+    public enum Results
     {
-        
+        Good,
+        Nothing,
+        Explosion
     }
+
+    public class IngredientsAndConditions
+    {
+        // Ingredients
+        public string Herb;
+        public string Liquid;
+        public string Solid;
+
+        // Conditions
+        public Temperature Temp;
+
+        public IngredientsAndConditions(string herb, string liquid, string solid, Temperature temp)
+        {
+            Herb = herb;
+            Liquid = liquid;
+            Solid = solid;
+            Temp = temp;
+        }
+    }
+
+    public static Dictionary<IngredientsAndConditions, Results> DB = new Dictionary<IngredientsAndConditions, Results>()
+    {
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
+        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing }
+    };
 }
