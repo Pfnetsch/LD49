@@ -34,9 +34,90 @@ Transform:
   - {fileID: 4887486908491307620}
   - {fileID: 4887486908316059914}
   - {fileID: 4887486907897086993}
+  - {fileID: 4170254422329702016}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3654370637320574136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5240643521445989025}
+    m_Modifications:
+    - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Name
+      value: Shaman Jelly
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.977055
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.1382573
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: id
+      value: Shaman Jelly
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: description
+      value: "\u201CProduced by shaman corp, nobody knows what's really in it. The
+        ingredients are as big of a mystery as the disappearance of the CEO many
+        years ago.\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+--- !u!4 &4170254422329702016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+  m_PrefabInstance: {fileID: 3654370637320574136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5240643520564003172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,6 +199,10 @@ PrefabInstance:
         female beauty. With plenty of light and care they grow to beautiful juicy
         fruits.\u201D"
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
 --- !u!4 &4887486909401621340 stripped
@@ -134,7 +219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: Wyvern grass
+      value: Wyvern Grass
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -182,12 +267,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: Wyvern grass
+      value: Wyvern Grass
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: description
       value: "\u201CThe grass curls upward like the tail of a wyvern, ending in two
         large leaves that resemble powerful wings.\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -260,6 +349,10 @@ PrefabInstance:
       value: "\u201CIt\u2019s simple bayleaf. But in blue ... And poisonous when
         heated.\u201D "
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
 --- !u!4 &4887486909236280325 stripped
@@ -276,7 +369,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: 'Holy beer herb '
+      value: Holy Beer Herb
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -324,13 +417,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: 'Holy beer herb '
+      value: Holy Beer Herb
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: description
       value: "\u201CThis sacred herb holds powerful forces: invulnerability, tremendous
         muscular strength and an irresistible charm. It can only be found at the
         tavern of your trust. For maximum effect it should be consumed regularly.\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -348,7 +445,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: Tussilago farfara
+      value: Tussilago Farfara
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -396,13 +493,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: Tussilago farfara
+      value: Tussilago Farfara
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: description
       value: "\u201CThis plant is a special chick in the plant world. When it can
         grow in the midst of other plants, it shines in many colors, but among plants
         of the same species it withers.\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -420,7 +521,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: Wobbly-Dobbly herb
+      value: Wobbly-Dobbly Herb
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -468,13 +569,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: Wobbly-Dobbly herb
+      value: Wobbly-Dobbly Herb
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: description
       value: "\u201CIt doesn\u2019t matter if you touch it or not because it wobbles
         and dobbles all the time. If you consume it you can\u2019t stop to wobble
         and dobble for a whole day and night too.\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -492,7 +597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: 'Angry dandelion  '
+      value: 'Angry Dandelion  '
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -540,13 +645,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: 'Angry dandelion  '
+      value: Angry Dandelion
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: description
       value: "\u201CNobody likes to be blown in the face, but the angry dandelion
         will follow you all the way to your house and kidnap your dog if you dare
         to do it.\u201D  "
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}

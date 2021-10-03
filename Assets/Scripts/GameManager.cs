@@ -68,11 +68,7 @@ public class GameManager : MonoBehaviour
 
             if (ingredientHit)
             {
-                if (_scrollQuestAndHistory && ingredientHit.transform.CompareTag("Scroll"))
-                {
-                    _scrollQuestAndHistory.EnableScroll(false);
-                }
-                else if (ingredientHit.transform.CompareTag("MiniScroll"))
+                if (ingredientHit.transform.CompareTag("MiniScroll"))
                 {
                     _scrollQuestAndHistory.EnableScroll(true);
                 }

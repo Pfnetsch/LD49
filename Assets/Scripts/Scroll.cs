@@ -12,7 +12,7 @@ public class Scroll : MonoBehaviour
     private ScrollRect _scrollRect;
     private int _scrollActive = 0;
 
-    private TMPro.TextMeshProUGUI _uiText;
+    public TMP_Text UItext;
 
     private Canvas _canvas;
     private SpriteRenderer _spriteRenderer;
@@ -24,7 +24,6 @@ public class Scroll : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>(true);
 
         _scrollRect = this.GetComponentInChildren<ScrollRect>();
-        _uiText = this.GetComponentInChildren<TMPro.TextMeshProUGUI>();
         _history = new List<string>();
     }
 
@@ -69,11 +68,11 @@ public class Scroll : MonoBehaviour
 
     public void UpdateScrollText()
     {
-        _uiText.text = _questText + "\n\n";
+        UItext.text = _questText + "\n\n";
 
         for (int i = 0; i < _history.Count; i++)
         {
-            _uiText.text += "* " + _history[_history.Count - 1 - i];
+            UItext.text += "* " + _history[_history.Count - 1 - i];
         }
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cauldron : MonoBehaviour
 {
-    public PotionDB.Temperature Temp;
-    public PotionDB.Luminosity Lumi;
+    public PotionDB.Temperature Temp = PotionDB.Temperature.Moderate;
+    public PotionDB.Luminosity Lumi = PotionDB.Luminosity.Bright;
 
     public Animator animator;
 
@@ -40,10 +40,13 @@ public class Cauldron : MonoBehaviour
                 // Write to TextBox "That's it!"
 
                 // Add to History
-                _scrollQuestAndHistory.AddHistoryItem("Succes: " + potion.ToString());
+                _scrollQuestAndHistory.AddHistoryItem("Success: " + potion.ToString());
 
                 // The right potion was created - Wuhu
                 // Set Animator
+
+                GameManager.State = GameManager.GameState.Idle;
+                animator.SetTrigger("idle");
             }
             else if (CheckIfPotionIsValidAndUpdateScroll())
             {
@@ -70,6 +73,9 @@ public class Cauldron : MonoBehaviour
 
                 // Add to History
                 _scrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
+
+                GameManager.State = GameManager.GameState.Idle;
+                animator.SetTrigger("idle");
             }
             else 
             {
@@ -82,9 +88,9 @@ public class Cauldron : MonoBehaviour
 
                 // Potion is unstable
                 // Set Animator
+                GameManager.State = GameManager.GameState.Idle;
+                //imator.SetTrigger("idle");
             }
-
-            animator.SetTrigger("idle");
         }
     }
 

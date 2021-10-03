@@ -46,7 +46,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: Horn of a sea bat
+      value: Horn of a Sea Bat
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: Horn of a sea bat
+      value: Horn of a Sea Bat
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: Type
@@ -105,6 +105,10 @@ PrefabInstance:
       value: "\u201CUnlike other bats, sea bats sleep on the ground by sticking their
         horns into the sand. When they become aroused, the horn simply falls off,
         and can be collected. How to arouse them is up to your imagination.\u201D "
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -122,7 +126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: Pin-pin mushroom
+      value: Pin-Pin Mushroom
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -170,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: Pin-pin mushroom
+      value: Pin-Pin Mushroom
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: Type
@@ -181,6 +185,10 @@ PrefabInstance:
       value: "\u201CThis mushroom looks strangely like a cucumber with a little hat
         on top. When licked it lets you think you are a unicorn, when brought in
         near of a Mush-Mush Shell it grows incredibly big.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -259,6 +267,10 @@ PrefabInstance:
         poop and lay it for a few days under a waterfall. Voil\xE1, you have gained
         Cobaliti.  P.S. Don\u2019t forget to change your number afterwards.  "
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
 --- !u!4 &3311405409345597279 stripped
@@ -335,6 +347,10 @@ PrefabInstance:
         are overwhelmed. When they see it in their peripheral view they often can\xB4t
         even look at it.\u201D"
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
 --- !u!4 &3311405408652454826 stripped
@@ -351,7 +367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: Mush-mush-shell
+      value: Mush-Mush-Shell
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -399,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: Mush-mush-shell
+      value: Mush-Mush-Shell
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: Type
@@ -410,6 +426,10 @@ PrefabInstance:
       value: "\u201CCan only be found underwater, but when brought to the surface
         it smells fishy. Strangely, the shell releases a peculiar secretion when
         it gets close to the pin-pin mushroom.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -485,6 +505,10 @@ PrefabInstance:
       propertyPath: description
       value: "\u201CHow did that get here?\u201D "
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
 --- !u!4 &3311405408457057133 stripped
@@ -501,7 +525,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: Trinity stone
+      value: Trinity Stone
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -549,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: Trinity stone
+      value: Trinity Stone
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: Type
@@ -559,6 +583,10 @@ PrefabInstance:
       propertyPath: description
       value: "Some say it's pure life, some say it\xB4s the essence of youth. In
         the end it's extracted from 3 altar boys."
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredLumi
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
