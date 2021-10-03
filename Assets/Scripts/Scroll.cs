@@ -14,9 +14,15 @@ public class Scroll : MonoBehaviour
 
     private TMPro.TextMeshProUGUI _uiText;
 
+    private Canvas _canvas;
+    private SpriteRenderer _spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
+        _canvas = GetComponentInChildren<Canvas>(true);
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>(true);
+
         _scrollRect = this.GetComponentInChildren<ScrollRect>();
         _uiText = this.GetComponentInChildren<TMPro.TextMeshProUGUI>();
         _history = new List<string>();
@@ -39,13 +45,19 @@ public class Scroll : MonoBehaviour
         _scrollActive = 0;
     }
 
+    public void EnableScroll(bool enable)
+    {
+        _canvas.gameObject.SetActive(enable);
+        _spriteRenderer.gameObject.SetActive(enable);
+
+        UpdateScrollText();
+    }
+
     public void AddHistoryItem(string item)
     {
         _history.Add(item);
 
         if (_history.Count >= 10) _history.RemoveAt(0);
-
-        UpdateScrollText();
     }
 
     public void SetNewQuest(PotionDB.Quest quest)
@@ -53,8 +65,6 @@ public class Scroll : MonoBehaviour
         _questText = quest.Name;
         _questText += "\n";
         _questText = quest.Riddle;
-
-        UpdateScrollText();
     }
 
     public void UpdateScrollText()

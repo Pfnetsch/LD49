@@ -9,13 +9,12 @@ public class Cauldron : MonoBehaviour
 
     public Animator animator;
 
-    private SpriteRenderer _spriteRenderer;
-    public Scroll ScrollQuestAndHistory;
+    private Scroll _scrollQuestAndHistory;
 
     // Start is called before the first frame update
     void Start()
     {
-        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _scrollQuestAndHistory = FindObjectOfType<Scroll>();
     }
 
     // Update is called once per frame
@@ -41,7 +40,7 @@ public class Cauldron : MonoBehaviour
                 // Write to TextBox "That's it!"
 
                 // Add to History
-                ScrollQuestAndHistory.AddHistoryItem("Succes: " + potion.ToString());
+                _scrollQuestAndHistory.AddHistoryItem("Succes: " + potion.ToString());
 
                 // The right potion was created - Wuhu
                 // Set Animator
@@ -70,7 +69,7 @@ public class Cauldron : MonoBehaviour
                 }
 
                 // Add to History
-                ScrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
+                _scrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
             }
             else 
             {
@@ -79,7 +78,7 @@ public class Cauldron : MonoBehaviour
                 // TextBox = TextDB.PotionTextsUnstable[rndUnstableText];
 
                 // Add to History
-                ScrollQuestAndHistory.AddHistoryItem("Unstable: " + potion.ToString());
+                _scrollQuestAndHistory.AddHistoryItem("Unstable: " + potion.ToString());
 
                 // Potion is unstable
                 // Set Animator

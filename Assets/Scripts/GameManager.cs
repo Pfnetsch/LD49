@@ -26,12 +26,12 @@ public class GameManager : MonoBehaviour
 
     public static Ingredient[] ActiveIngredients;
 
-    public Scroll ScrollQuestAndHistory;
+    private Scroll _scrollQuestAndHistory;
 
     // Start is called before the first frame update
     void Start()
     {
-        //ScrollQuestAndHistory.gameObject.SetActive(false);
+        _scrollQuestAndHistory = FindObjectOfType<Scroll>();
 
         // 0 is Herb
         // 1 is Liquid
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
         CurrentPotionTask = quest.Item1;
 
-        //ScrollQuestAndHistory.SetNewQuest(quest.Item2);
+        _scrollQuestAndHistory.SetNewQuest(quest.Item2);
 
         // Write Quest to Text Box
     }
@@ -68,13 +68,13 @@ public class GameManager : MonoBehaviour
 
             if (ingredientHit)
             {
-                if (ScrollQuestAndHistory)
+                if (_scrollQuestAndHistory)
                 {
 
                 }
                 else if (ingredientHit.transform.CompareTag("MiniScroll"))
                 {
-                    ScrollQuestAndHistory.enabled = true;
+                    _scrollQuestAndHistory.enabled = true;
                 }
             }
         }
