@@ -101,7 +101,6 @@ public class HandleIngredients : MonoBehaviour
             if (_ingredientUnderMouse != null)
             {
                 _ingredientUnderMouse.transform.position = mousePos + _dragOffset;
-                print(_ingredientUnderMouse.transform.position);
             }
         }
 

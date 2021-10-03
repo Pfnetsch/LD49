@@ -7,21 +7,15 @@ public class Cauldron : MonoBehaviour
     public PotionDB.Temperature Temp;
     public PotionDB.Luminosity Lumi;
 
-    public Sprite idleSprite;
     public Animator animator;
-    public Sprite combinginSprite;
-    public Sprite craftingSprite;
-
-    public Ingredient[] IngredientsInside;
 
     private SpriteRenderer _spriteRenderer;
-    public Scroll _scrollQuestAndHistory;
+    public Scroll ScrollQuestAndHistory;
 
     // Start is called before the first frame update
     void Start()
     {
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        _scrollQuestAndHistory = FindObjectOfType<Scroll>();
     }
 
     // Update is called once per frame
@@ -40,14 +34,14 @@ public class Cauldron : MonoBehaviour
         }
         else if (GameManager.State == GameManager.GameState.PotionReady)
         {
-            PotionDB.Potion potion = new PotionDB.Potion(IngredientsInside[0].id, IngredientsInside[1].id, IngredientsInside[2].id, Temp, Lumi);
+            PotionDB.Potion potion = new PotionDB.Potion(GameManager.ActiveIngredients[0].id, GameManager.ActiveIngredients[1].id, GameManager.ActiveIngredients[2].id, Temp, Lumi);
 
             if (PotionDB.CheckIfCorrectPotion(GameManager.CurrentPotionTask, potion))
             {
                 // Write to TextBox "That's it!"
 
                 // Add to History
-                _scrollQuestAndHistory.AddHistoryItem("Succes: " + potion.ToString());
+                ScrollQuestAndHistory.AddHistoryItem("Succes: " + potion.ToString());
 
                 // The right potion was created - Wuhu
                 // Set Animator
@@ -76,7 +70,7 @@ public class Cauldron : MonoBehaviour
                 }
 
                 // Add to History
-                _scrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
+                ScrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
             }
             else 
             {
@@ -85,13 +79,12 @@ public class Cauldron : MonoBehaviour
                 // TextBox = TextDB.PotionTextsUnstable[rndUnstableText];
 
                 // Add to History
-                _scrollQuestAndHistory.AddHistoryItem("Unstable: " + potion.ToString());
+                ScrollQuestAndHistory.AddHistoryItem("Unstable: " + potion.ToString());
 
                 // Potion is unstable
                 // Set Animator
             }
 
-            _spriteRenderer.sprite = idleSprite;
             animator.SetTrigger("idle");
         }
     }
@@ -101,27 +94,27 @@ public class Cauldron : MonoBehaviour
         bool isValid = true;
         bool hintAddedToScroll = false;
 
-        for (int i = 0; i < IngredientsInside.Length; i++)
+        for (int i = 0; i < GameManager.ActiveIngredients.Length; i++)
         {
-            if (IngredientsInside[i].RequiredLumi != Lumi)
+            if (GameManager.ActiveIngredients[i].RequiredLumi != Lumi)
             {
                 isValid = false;
 
                 // Update Scroll here, if not already done
-                if (!IngredientsInside[i].HintLuminosity)
+                if (!GameManager.ActiveIngredients[i].HintLuminosity)
                 {
-                    IngredientsInside[i].HintLuminosity = true;
+                    GameManager.ActiveIngredients[i].HintLuminosity = true;
                     hintAddedToScroll = true;
                 }
             }
-            if (IngredientsInside[i].RequiredTemp != Temp)
+            if (GameManager.ActiveIngredients[i].RequiredTemp != Temp)
             {
                 isValid = false;
 
                 // Update Scroll here, if not already done
-                if (!IngredientsInside[i].HintTemperature)
+                if (!GameManager.ActiveIngredients[i].HintTemperature)
                 {
-                    IngredientsInside[i].HintTemperature = true;
+                    GameManager.ActiveIngredients[i].HintTemperature = true;
                     hintAddedToScroll = true;
                 }
             }

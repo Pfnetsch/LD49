@@ -49,8 +49,6 @@ public class TempControl : MonoBehaviour
         {
             userHoldsLever = false;
 
-            Debug.Log(transform.rotation.z);
-
             if (transform.rotation.z <= -0.33F)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, -90F));
