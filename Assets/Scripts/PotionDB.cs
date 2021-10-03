@@ -11,10 +11,12 @@ public static class PotionDB
         Hot
     }
 
+    [System.Flags]
     public enum Luminosity
     {
-        Bright,
-        Dark
+        Bright = 0x1,
+        Dark = 0x2,
+        Both = 0x3
     }
 
     public enum Results
@@ -56,7 +58,7 @@ public static class PotionDB
 
         public override int GetHashCode()
         {
-            int hashCode = 1518817350;
+            int hashCode = 1120038190;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Herb);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Liquid);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Solid);
@@ -107,6 +109,15 @@ public static class PotionDB
             new Potion("","","",Temperature.Cold, Luminosity.Bright)
         }
     };
+
+    public static bool CheckIfCorrectPotion(Potion questPotion, Potion potion)
+    {
+        return questPotion.Herb == potion.Herb &&
+                questPotion.Liquid == potion.Liquid &&
+                questPotion.Solid == potion.Solid &&
+                questPotion.Temp == potion.Temp &&
+                questPotion.Luminosity.HasFlag(potion.Luminosity);
+    }
 
     public static int NumberOfCorrectIngredients(Potion questPotion, Potion potion, out string wrongOrRightIngredient)
     {

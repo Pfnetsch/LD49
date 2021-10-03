@@ -42,7 +42,7 @@ public class Cauldron : MonoBehaviour
         {
             PotionDB.Potion potion = new PotionDB.Potion(IngredientsInside[0].id, IngredientsInside[1].id, IngredientsInside[2].id, Temp, Lumi);
 
-            if (GameManager.CurrentPotionTask == potion)
+            if (PotionDB.CheckIfCorrectPotion(GameManager.CurrentPotionTask, potion))
             {
                 // Write to TextBox "That's it!"
 

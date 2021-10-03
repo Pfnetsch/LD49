@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 
         // Retrieve first Potion
         CurrentPotionTask = GetPotionForCurrentLevel();
+
+
     }
 
     // Update is called once per frame
