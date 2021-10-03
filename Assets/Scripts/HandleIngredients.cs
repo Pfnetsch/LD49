@@ -34,6 +34,12 @@ public class HandleIngredients : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check if crafting has finished
+        if (_routeIteration >= 1)
+        {
+            GameManager.State = GameManager.GameState.Idle;
+        }
+
         //update game state when on of the ingredients is in the cauldron
         if((ingredientsOnPrepPositions[0] != null || ingredientsOnPrepPositions[1] != null || ingredientsOnPrepPositions[2] != null) && GameManager.State == GameManager.GameState.Idle)
         {
@@ -53,6 +59,7 @@ public class HandleIngredients : MonoBehaviour
 
             _routeIteration += Time.deltaTime * AnimationSpeed;
         }
+
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
