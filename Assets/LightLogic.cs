@@ -6,12 +6,14 @@ public class LightLogic : MonoBehaviour
 {
     GameObject ld;
     SpriteRenderer sprite;
+    public Animator animator;
     bool isLit = true;
     // Start is called before the first frame update
     void Start()
-    {
+    {    
         ld = GameObject.Find("LightRect");
         sprite = ld.GetComponent<SpriteRenderer>();
+        sprite.color = new Color(.1f, .1f, .3f, 0f);
     }
 
     // Update is called once per frame
@@ -32,11 +34,14 @@ public class LightLogic : MonoBehaviour
                     {
                         sprite.color = new Color(.1f, .1f, .3f, .5f);
                         isLit = false;
+                        animator.SetTrigger("lightoff");
+
                     }
                     else
                     {
                         sprite.color = new Color(.1f, .1f, .3f, 0f);
                         isLit = true;
+                        animator.SetTrigger("lighton");
                     }
                 }
             }
