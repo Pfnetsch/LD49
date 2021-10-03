@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScrollQuestAndHistory.gameObject.SetActive(false);
+        //ScrollQuestAndHistory.gameObject.SetActive(false);
 
         // 0 is Herb
         // 1 is Liquid
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
         CurrentPotionTask = quest.Item1;
 
-        ScrollQuestAndHistory.SetNewQuest(quest.Item2);
+        //ScrollQuestAndHistory.SetNewQuest(quest.Item2);
 
         // Write Quest to Text Box
     }

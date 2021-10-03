@@ -40,7 +40,7 @@ public class HandleIngredients : MonoBehaviour
         }
 
         //update game state when on of the ingredients is in the cauldron
-        if((GameManager.ActiveIngredients[0] != null || GameManager.ActiveIngredients[1] != null || GameManager.ActiveIngredients[2] != null) && GameManager.State == GameManager.GameState.Idle)
+        if(GameManager.ActiveIngredients != null && GameManager.State == GameManager.GameState.Idle && (GameManager.ActiveIngredients[0] != null || GameManager.ActiveIngredients[1] != null || GameManager.ActiveIngredients[2] != null))
         {
             GameManager.State = GameManager.GameState.Combining;
         }
