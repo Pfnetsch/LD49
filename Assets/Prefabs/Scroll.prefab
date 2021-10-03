@@ -471,7 +471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3281050257822858984
 RectTransform:
   m_ObjectHideFlags: 0
@@ -565,13 +565,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1171658751032609763}
   - component: {fileID: 782136846743223044}
+  - component: {fileID: 2001620381}
+  - component: {fileID: 2001620382}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Scroll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1171658751032609763
 Transform:
   m_ObjectHideFlags: 0
@@ -637,6 +639,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &2001620381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041889650635672557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90, y: 180, z: 0.2}
+  m_Center: {x: 115, y: 0, z: 0}
+--- !u!65 &2001620382
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041889650635672557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 90, y: 180, z: 0.2}
+  m_Center: {x: -115, y: 0, z: 0}
 --- !u!1 &7833254497849825472
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +701,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 240.4}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1116839875
 MonoBehaviour:
