@@ -11,14 +11,20 @@ public static class PotionDB
         Hot
     }
 
-    public enum Results
+    public enum Lunimosity
     {
-        Good,
-        Nothing,
-        Explosion
+        Bright,
+        Dark
     }
 
-    public class IngredientsAndConditions
+    public enum Results
+    {
+        Nothing,
+        Success,
+        Unstable
+    }
+
+    public class Potion
     {
         // Ingredients
         public string Herb;
@@ -27,34 +33,52 @@ public static class PotionDB
 
         // Conditions
         public Temperature Temp;
+        public Lunimosity Lunimosity;
 
-        public IngredientsAndConditions(string herb, string liquid, string solid, Temperature temp)
+        public Potion(string herb, string liquid, string solid, Temperature temp, Lunimosity lunimosity)
         {
             Herb = herb;
             Liquid = liquid;
             Solid = solid;
             Temp = temp;
+            Lunimosity = lunimosity;
         }
     }
 
-    public static Dictionary<IngredientsAndConditions, Results> DB = new Dictionary<IngredientsAndConditions, Results>()
+    // Apprentice, Magician and Master Postions
+    public static List<List<Potion>> Potions = new List<List<Potion>>()
     {
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing },
-        { new IngredientsAndConditions("","","",Temperature.Cold), Results.Nothing }
+        new List<Potion>()
+        {
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright)
+        },
+
+        new List<Potion>()
+        {
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright)
+        },
+
+        new List<Potion>()
+        {
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
+            new Potion("","","",Temperature.Cold, Lunimosity.Bright)
+        }
     };
 }
