@@ -19,7 +19,6 @@ public class PopUpSystem : MonoBehaviour
     }
     public void PopDown()
     {
-        Debug.Log("trying to close window. Maybe works");
         popUpBox.SetActive(false);
         animator.SetTrigger("close");
     }

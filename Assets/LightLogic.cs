@@ -8,12 +8,16 @@ public class LightLogic : MonoBehaviour
     SpriteRenderer sprite;
     public Animator animator;
     bool isLit = true;
+    Cauldron cauldron;
     // Start is called before the first frame update
     void Start()
-    {    
+    {
+        animator.SetTrigger("lighton");
         ld = GameObject.Find("LightRect");
         sprite = ld.GetComponent<SpriteRenderer>();
         sprite.color = new Color(.1f, .1f, .3f, 0f);
+        cauldron = FindObjectOfType<Cauldron>();
+
     }
 
     // Update is called once per frame
@@ -35,13 +39,14 @@ public class LightLogic : MonoBehaviour
                         sprite.color = new Color(.1f, .1f, .3f, .5f);
                         isLit = false;
                         animator.SetTrigger("lightoff");
-
+                        cauldron.Lumi = PotionDB.Luminosity.Dark;
                     }
                     else
                     {
                         sprite.color = new Color(.1f, .1f, .3f, 0f);
                         isLit = true;
                         animator.SetTrigger("lighton");
+                        cauldron.Lumi = PotionDB.Luminosity.Bright;
                     }
                 }
             }
