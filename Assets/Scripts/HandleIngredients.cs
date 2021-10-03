@@ -13,9 +13,7 @@ public class HandleIngredients : MonoBehaviour
 
     private Vector3 _dragOffset;
 
-    private Ingredient _herbOnPrep;
-    private Ingredient _liquidOnPrep;
-    private Ingredient _solidOnPrep;
+    private Ingredient[] ingredientsOnPrepPositions;
 
     private bool _startMixing = false;
     private float _routeIteration = 0f;
@@ -25,31 +23,29 @@ public class HandleIngredients : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    private void FixedUpdate()
-    {
-        if (_startMixing && _routeIteration <= 1)
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                Transform[] pathPoints = PrepPositions[i].GetComponentsInChildren<Transform>();
-
-                Vector2 _positionOnRoute = Mathf.Pow(1 - _routeIteration, 3) * pathPoints[1].position + 3 * Mathf.Pow(1 - _routeIteration, 2) * _routeIteration * pathPoints[2].position + 3 * (1 - _routeIteration) * Mathf.Pow(_routeIteration, 2) * pathPoints[3].position + Mathf.Pow(_routeIteration, 3) * pathPoints[4].position;
-
-                if (i == 0) _herbOnPrep.transform.position = _positionOnRoute; // new Vector3(_positionOnRoute.x, _positionOnRoute.y, _herbOnPrep.transform.position.y);
-                else if (i == 1) _liquidOnPrep.transform.position = new Vector3(_positionOnRoute.x, _positionOnRoute.y, _liquidOnPrep.transform.position.y);
-                else if (i == 2) _solidOnPrep.transform.position = new Vector3(_positionOnRoute.x, _positionOnRoute.y, _solidOnPrep.transform.position.y);
-            }
-
-            _routeIteration += Time.deltaTime * AnimationSpeed;
-        }
+        // 0 is Herb
+        // 1 is Liquid
+        // 2 is Solid
+        ingredientsOnPrepPositions = new Ingredient[3];
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_startMixing && _routeIteration <= 1)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Transform[] pathPoints = PrepPositions[i].GetComponentsInChildren<Transform>();
+
+                Vector2 _positionOnRoute = Mathf.Pow(1 - _routeIteration, 3) * pathPoints[1].position + 3 * Mathf.Pow(1 - _routeIteration, 2) * _routeIteration * pathPoints[2].position + 3 * (1 - _routeIteration) * Mathf.Pow(_routeIteration, 2) * pathPoints[3].position + Mathf.Pow(_routeIteration, 3) * pathPoints[4].position;
+
+                ingredientsOnPrepPositions[i].transform.position = _positionOnRoute; // new Vector3(_positionOnRoute.x, _positionOnRoute.y, _herbOnPrep.transform.position.y);
+            }
+
+            _routeIteration += Time.deltaTime * AnimationSpeed;
+        }
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
@@ -61,7 +57,7 @@ public class HandleIngredients : MonoBehaviour
             {
                 if (ingredientHit.transform.CompareTag("Loeffel"))
                 {
-                    if (_herbOnPrep != null && _liquidOnPrep != null && _solidOnPrep != null)
+                    if (ingredientsOnPrepPositions[0] != null && ingredientsOnPrepPositions[1] != null && ingredientsOnPrepPositions[2] != null)
                     {
                         Debug.Log("Loeffel");
                         _startMixing = true;
@@ -109,15 +105,15 @@ public class HandleIngredients : MonoBehaviour
                     {
                         case Ingredient.IngredientType.Herb:
                             _ingredientUnderMouse.transform.position = PrepPositions[0].transform.position;
-                            _herbOnPrep = _ingredientUnderMouse;
+                            ingredientsOnPrepPositions[0] = _ingredientUnderMouse;
                             break;
                         case Ingredient.IngredientType.Liquid:
                             _ingredientUnderMouse.transform.position = PrepPositions[1].transform.position;
-                            _liquidOnPrep = _ingredientUnderMouse;
+                            ingredientsOnPrepPositions[1] = _ingredientUnderMouse;
                             break;
                         case Ingredient.IngredientType.Solid:
                             _ingredientUnderMouse.transform.position = PrepPositions[2].transform.position;
-                            _solidOnPrep = _ingredientUnderMouse;
+                            ingredientsOnPrepPositions[2] = _ingredientUnderMouse;
                             break;
                         default:
                             break;
