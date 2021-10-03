@@ -7,7 +7,6 @@ public class Cauldron : MonoBehaviour
     public PotionDB.Temperature Temp;
     public PotionDB.Luminosity Lumi;
 
-    public SpriteRenderer spriteRenderer;
     public Sprite idleSprite;
     public Animator animator;
     public Sprite combinginSprite;
@@ -15,10 +14,14 @@ public class Cauldron : MonoBehaviour
 
     public Ingredient[] IngredientsInside;
 
+    private SpriteRenderer _spriteRenderer;
+    public Scroll _scrollQuestAndHistory;
+
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _scrollQuestAndHistory = FindObjectOfType<Scroll>();
     }
 
     // Update is called once per frame
@@ -39,11 +42,12 @@ public class Cauldron : MonoBehaviour
         {
             PotionDB.Potion potion = new PotionDB.Potion(IngredientsInside[0].id, IngredientsInside[1].id, IngredientsInside[2].id, Temp, Lumi);
 
-            // Add to History
-
             if (GameManager.CurrentPotionTask == potion)
             {
                 // Write to TextBox "That's it!"
+
+                // Add to History
+                _scrollQuestAndHistory.AddHistoryItem("Succes: " + potion.ToString());
 
                 // The right potion was created - Wuhu
                 // Set Animator
@@ -70,6 +74,9 @@ public class Cauldron : MonoBehaviour
 
                     ; // Set Text "Well, I mean the … was a good idea. The others…." + wrongOrRightIngredient
                 }
+
+                // Add to History
+                _scrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
             }
             else 
             {
@@ -77,11 +84,14 @@ public class Cauldron : MonoBehaviour
 
                 // TextBox = TextDB.PotionTextsUnstable[rndUnstableText];
 
+                // Add to History
+                _scrollQuestAndHistory.AddHistoryItem("Unstable: " + potion.ToString());
+
                 // Potion is unstable
                 // Set Animator
             }
 
-            spriteRenderer.sprite = idleSprite;
+            _spriteRenderer.sprite = idleSprite;
             animator.SetTrigger("idle");
         }
     }

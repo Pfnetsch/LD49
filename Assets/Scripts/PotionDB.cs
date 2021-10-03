@@ -33,15 +33,15 @@ public static class PotionDB
 
         // Conditions
         public Temperature Temp;
-        public Luminosity Lunimosity;
+        public Luminosity Luminosity;
 
-        public Potion(string herb, string liquid, string solid, Temperature temp, Luminosity lunimosity)
+        public Potion(string herb, string liquid, string solid, Temperature temp, Luminosity lumin)
         {
             Herb = herb;
             Liquid = liquid;
             Solid = solid;
             Temp = temp;
-            Lunimosity = lunimosity;
+            Luminosity = lumin;
         }
 
         public override bool Equals(object obj)
@@ -51,7 +51,7 @@ public static class PotionDB
                    Liquid == potion.Liquid &&
                    Solid == potion.Solid &&
                    Temp == potion.Temp &&
-                   Lunimosity == potion.Lunimosity;
+                   Luminosity == potion.Luminosity;
         }
 
         public override int GetHashCode()
@@ -61,8 +61,13 @@ public static class PotionDB
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Liquid);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Solid);
             hashCode = hashCode * -1521134295 + Temp.GetHashCode();
-            hashCode = hashCode * -1521134295 + Lunimosity.GetHashCode();
+            hashCode = hashCode * -1521134295 + Luminosity.GetHashCode();
             return hashCode;
+        }
+
+        public override string ToString()
+        {
+            return "[" + Herb + "," + Liquid + "," + Solid + "][Temperature: " + Temp.ToString() + ", Luminosity: " + Luminosity.ToString() + "]";
         }
     }
 
