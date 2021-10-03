@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameLevel
+    {
+        Apprentice,
+        Initiate,
+        Master
+    }
+
     public enum GameState
     {
         Idle,
@@ -12,7 +19,10 @@ public class GameManager : MonoBehaviour
         PotionReady
     }
 
+    public static GameLevel Level = GameLevel.Apprentice;
     public static GameState State = GameState.Idle;
+
+    public static PotionDB.Potion CurrentPotionTask;
 
     public static Ingredient[] ActiveIngredients;
 

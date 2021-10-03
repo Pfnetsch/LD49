@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Cauldron : MonoBehaviour
 {
-    public PotionDB.Temperature Temperature;
+    public PotionDB.Temperature Temp;
+    public PotionDB.Luminosity Lumi;
 
     public SpriteRenderer spriteRenderer;
     public Sprite idleSprite;
@@ -36,8 +37,33 @@ public class Cauldron : MonoBehaviour
         }
         else
         {
+            PotionDB.Potion potion = new PotionDB.Potion(IngredientsInside[0].id, IngredientsInside[1].id, IngredientsInside[2].id, Temp, Lumi);
+
+
+            if (GameManager.CurrentPotionTask == potion)
+            {
+                // The right potion was created - Wuhu
+            }
+            else if (CheckIfPotionIsValidAndUpdateScroll(potion))
+            {
+                // Potion is valid but was not requested
+            }
+            else 
+            {
+                // Potion is unstable
+            }
+
             spriteRenderer.sprite = idleSprite;
             animator.SetTrigger("idle");
         }
+    }
+
+    public bool CheckIfPotionIsValidAndUpdateScroll(PotionDB.Potion potion)
+    {
+
+
+        // Update Logbook here
+
+        return true;
     }
 }

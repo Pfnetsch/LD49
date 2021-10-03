@@ -11,7 +11,7 @@ public static class PotionDB
         Hot
     }
 
-    public enum Lunimosity
+    public enum Luminosity
     {
         Bright,
         Dark
@@ -33,15 +33,36 @@ public static class PotionDB
 
         // Conditions
         public Temperature Temp;
-        public Lunimosity Lunimosity;
+        public Luminosity Lunimosity;
 
-        public Potion(string herb, string liquid, string solid, Temperature temp, Lunimosity lunimosity)
+        public Potion(string herb, string liquid, string solid, Temperature temp, Luminosity lunimosity)
         {
             Herb = herb;
             Liquid = liquid;
             Solid = solid;
             Temp = temp;
             Lunimosity = lunimosity;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Potion potion &&
+                   Herb == potion.Herb &&
+                   Liquid == potion.Liquid &&
+                   Solid == potion.Solid &&
+                   Temp == potion.Temp &&
+                   Lunimosity == potion.Lunimosity;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = 1518817350;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Herb);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Liquid);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Solid);
+            hashCode = hashCode * -1521134295 + Temp.GetHashCode();
+            hashCode = hashCode * -1521134295 + Lunimosity.GetHashCode();
+            return hashCode;
         }
     }
 
@@ -50,35 +71,35 @@ public static class PotionDB
     {
         new List<Potion>()
         {
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright)
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright)
         },
 
         new List<Potion>()
         {
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright)
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright)
         },
 
         new List<Potion>()
         {
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright),
-            new Potion("","","",Temperature.Cold, Lunimosity.Bright)
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright),
+            new Potion("","","",Temperature.Cold, Luminosity.Bright)
         }
     };
 }

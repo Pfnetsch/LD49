@@ -54,17 +54,17 @@ public class TempControl : MonoBehaviour
             if (transform.rotation.z <= -0.33F)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, -90F));
-                if (_cauldron != null) _cauldron.Temperature = PotionDB.Temperature.Hot;
+                if (_cauldron != null) _cauldron.Temp = PotionDB.Temperature.Hot;
             }
             else if (transform.rotation.z >= 0.33F)
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90F));
-                if (_cauldron != null) _cauldron.Temperature = PotionDB.Temperature.Cold;
+                if (_cauldron != null) _cauldron.Temp = PotionDB.Temperature.Cold;
             }
             else
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-                if (_cauldron != null) _cauldron.Temperature = PotionDB.Temperature.Moderate;
+                if (_cauldron != null) _cauldron.Temp = PotionDB.Temperature.Moderate;
             }
         }
     }
