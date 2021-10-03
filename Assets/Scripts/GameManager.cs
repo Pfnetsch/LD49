@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         Idle,
+        Combining,
+        Ready,
         Crafting
     }
 

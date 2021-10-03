@@ -16,10 +16,11 @@ public class BackAndForth : MonoBehaviour
 
     void Update()
     {
-   
-        Vector3 v = startPos;   
-        v.x += delta * Mathf.Sin(Time.time * speed);
-        transform.position = v;
-
+        if (GameManager.State == GameManager.GameState.Crafting)
+        {
+            Vector3 v = startPos;
+            v.x += delta * Mathf.Sin(Time.time * speed);
+            transform.position = v;
+        }
     }
 }
