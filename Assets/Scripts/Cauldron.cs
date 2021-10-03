@@ -35,9 +35,11 @@ public class Cauldron : MonoBehaviour
             //Debug.Log("I am crafting right now ");
             animator.SetTrigger("crafting");
         }
-        else
+        else if (GameManager.State == GameManager.GameState.PotionReady)
         {
             PotionDB.Potion potion = new PotionDB.Potion(IngredientsInside[0].id, IngredientsInside[1].id, IngredientsInside[2].id, Temp, Lumi);
+
+            // Add to History
 
             if (GameManager.CurrentPotionTask == potion)
             {
@@ -51,15 +53,23 @@ public class Cauldron : MonoBehaviour
                 // Potion is valid but was not requested
                 // Set Animator
 
-                int correctIngredients = PotionDB.NumberOfCorrectIngredients(GameManager.CurrentPotionTask, potion);
+                int correctIngredients = PotionDB.NumberOfCorrectIngredients(GameManager.CurrentPotionTask, potion, out string wrongOrRightIngredient);
 
                 int rndValidText = Random.Range(0, TextDB.PotionTextsValid.Count - 1);
 
                 // TextBox = TextDB.PotionTextsValid[rndValidText];
 
-                if (correctIngredients == 0) ; // Set Text
-                else if (correctIngredients == 1) ; // Set Text "That was close, give it a second thought if you really need ..."
-                else if (correctIngredients == 2) ; // Set Text
+                if (correctIngredients == 0) ; // Set Text "Oh come on, it's a beginners task..."
+                else if (correctIngredients == 1)
+                {
+
+                    ; // Set Text "That was close, give it a second thought if you really need ..." + wrongOrRightIngredient
+                }
+                else if (correctIngredients == 2)
+                {
+
+                    ; // Set Text "Well, I mean the … was a good idea. The others…." + wrongOrRightIngredient
+                }
             }
             else 
             {
@@ -113,6 +123,7 @@ public class Cauldron : MonoBehaviour
         {
             // Write to TextBox
             // ... Your knowledge over the ingredients have been expanded
+            // You learned something new
         }
         else if (!isValid && !hintAddedToScroll)
         {

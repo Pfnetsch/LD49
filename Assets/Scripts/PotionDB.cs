@@ -103,15 +103,39 @@ public static class PotionDB
         }
     };
 
-    public static int NumberOfCorrectIngredients(Potion questPotion, Potion potion)
+    public static int NumberOfCorrectIngredients(Potion questPotion, Potion potion, out string wrongOrRightIngredient)
     {
         int count = 0;
+        wrongOrRightIngredient = "";
+        string rightIngredient = "";
+        string wrongIngredient = "";
 
-        if (potion.Herb == questPotion.Herb) count++;
+        if (potion.Herb == questPotion.Herb)
+        {
+            count++;
+            rightIngredient = potion.Herb;
+        }
+        else
+            wrongIngredient = potion.Herb;
 
-        if (potion.Liquid == questPotion.Liquid) count++;
+        if (potion.Liquid == questPotion.Liquid)
+        {
+            count++;
+            rightIngredient = potion.Liquid;
+        }
+        else
+            wrongIngredient = potion.Liquid;
 
-        if (potion.Solid == questPotion.Solid) count++;
+        if (potion.Solid == questPotion.Solid)
+        {
+            count++;
+            rightIngredient = potion.Solid;
+        }
+        else
+            wrongIngredient = potion.Solid;
+
+        if (count == 1) wrongOrRightIngredient = rightIngredient;
+        else if (count == 2) wrongOrRightIngredient = wrongIngredient;
 
         return count;
     }
