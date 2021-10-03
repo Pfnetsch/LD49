@@ -16,18 +16,10 @@ public class BackAndForth : MonoBehaviour
 
     void Update()
     {
-        HandleIngredients hit =  this.GetComponent<HandleIngredients>();
-        GameObject foo = this.gameObject;
-        Cauldron caul = this.GetComponent<Cauldron>();
-        Loeffel loeff = this.GetComponent<Loeffel>();
-        if(caul.Status == Cauldron.CraftingStatus.Crafting)
-        {
-            Vector3 v = startPos;   
-            v.x += delta * Mathf.Sin(Time.time * speed);
-            transform.position = v;
+   
+        Vector3 v = startPos;   
+        v.x += delta * Mathf.Sin(Time.time * speed);
+        transform.position = v;
 
-            //Vector3 vec = new Vector3(2* Mathf.Sin(Time.time *3) +1, 4 * Mathf.Sin(Time.time *3) +1, Mathf.Sin(Time.time *3));
-            //transform.localScale = vec;
-        }
     }
 }

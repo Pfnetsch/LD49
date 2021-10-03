@@ -27,6 +27,7 @@ public class HandleIngredients : MonoBehaviour
         // 1 is Liquid
         // 2 is Solid
         ingredientsOnPrepPositions = new Ingredient[3];
+        _pop = GetComponent<PopUpSystem>();
     }
 
     // Update is called once per frame
@@ -64,7 +65,7 @@ public class HandleIngredients : MonoBehaviour
                     }
                 }
 
-                //_pop = GetComponent<PopUpSystem>();
+
 
                 if (ingredientHit)
                 {
@@ -75,7 +76,7 @@ public class HandleIngredients : MonoBehaviour
                         _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
 
                         //popup handling
-                        //_pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.description, _ingredientUnderMouse.unlocks);
+                        _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.description, _ingredientUnderMouse.unlocks);
 
                         print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
                     }
@@ -89,13 +90,12 @@ public class HandleIngredients : MonoBehaviour
             {
                 _ingredientUnderMouse.transform.position = mousePos + _dragOffset;
                 print(_ingredientUnderMouse.transform.position);
-                //_pop.transform.position = mousePos + _dragOffset;
             }
         }
 
         if (Input.GetMouseButtonUp(0)) //releasing the button
         {
-            //_pop.PopDown();
+            _pop.PopDown();
 
             if (_ingredientUnderMouse != null)
             {
