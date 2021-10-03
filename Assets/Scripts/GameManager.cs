@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
         // 1 is Liquid
         // 2 is Solid
         ActiveIngredients = new Ingredient[3];
+
+        // Retrieve first Potion
+        CurrentPotionTask = GetPotionForCurrentLevel();
     }
 
     // Update is called once per frame
@@ -46,5 +49,12 @@ public class GameManager : MonoBehaviour
             PopUpSystem pop = GetComponent<PopUpSystem>();
             pop.PopUp("busen", "busen sin schon ziemlich nice!", unlocks);
         }
+    }
+
+    PotionDB.Potion GetPotionForCurrentLevel()
+    {
+        int randomIndex = Random.Range(0, PotionDB.Potions[(int)Level].Count - 1);
+
+        return PotionDB.Potions[(int)Level][randomIndex];
     }
 }

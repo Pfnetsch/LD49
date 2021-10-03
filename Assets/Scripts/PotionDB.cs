@@ -102,4 +102,17 @@ public static class PotionDB
             new Potion("","","",Temperature.Cold, Luminosity.Bright)
         }
     };
+
+    public static int NumberOfCorrectIngredients(Potion questPotion, Potion potion)
+    {
+        int count = 0;
+
+        if (potion.Herb == questPotion.Herb) count++;
+
+        if (potion.Liquid == questPotion.Liquid) count++;
+
+        if (potion.Solid == questPotion.Solid) count++;
+
+        return count;
+    }
 }

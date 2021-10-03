@@ -10,9 +10,16 @@ public class Ingredient : MonoBehaviour
         Liquid,
         Solid
     }
+
     public string id;
     public string description;
     public List<string> unlocks;
+
+    public PotionDB.Luminosity RequiredLumi;
+    public PotionDB.Temperature RequiredTemp;
+
+    public bool HintLuminosity;
+    public bool HintTemperature;
 
     public IngredientType Type;
 

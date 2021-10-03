@@ -39,18 +39,36 @@ public class Cauldron : MonoBehaviour
         {
             PotionDB.Potion potion = new PotionDB.Potion(IngredientsInside[0].id, IngredientsInside[1].id, IngredientsInside[2].id, Temp, Lumi);
 
-
             if (GameManager.CurrentPotionTask == potion)
             {
+                // Write to TextBox "That's it!"
+
                 // The right potion was created - Wuhu
+                // Set Animator
             }
-            else if (CheckIfPotionIsValidAndUpdateScroll(potion))
+            else if (CheckIfPotionIsValidAndUpdateScroll())
             {
                 // Potion is valid but was not requested
+                // Set Animator
+
+                int correctIngredients = PotionDB.NumberOfCorrectIngredients(GameManager.CurrentPotionTask, potion);
+
+                int rndValidText = Random.Range(0, TextDB.PotionTextsValid.Count - 1);
+
+                // TextBox = TextDB.PotionTextsValid[rndValidText];
+
+                if (correctIngredients == 0) ; // Set Text
+                else if (correctIngredients == 1) ; // Set Text "That was close, give it a second thought if you really need ..."
+                else if (correctIngredients == 2) ; // Set Text
             }
             else 
             {
+                int rndUnstableText = Random.Range(0, TextDB.PotionTextsUnstable.Count - 1);
+
+                // TextBox = TextDB.PotionTextsUnstable[rndUnstableText];
+
                 // Potion is unstable
+                // Set Animator
             }
 
             spriteRenderer.sprite = idleSprite;
@@ -58,12 +76,49 @@ public class Cauldron : MonoBehaviour
         }
     }
 
-    public bool CheckIfPotionIsValidAndUpdateScroll(PotionDB.Potion potion)
+    public bool CheckIfPotionIsValidAndUpdateScroll()
     {
+        bool isValid = true;
+        bool hintAddedToScroll = false;
 
+        for (int i = 0; i < IngredientsInside.Length; i++)
+        {
+            if (IngredientsInside[i].RequiredLumi != Lumi)
+            {
+                isValid = false;
 
-        // Update Logbook here
+                // Update Scroll here, if not already done
+                if (!IngredientsInside[i].HintLuminosity)
+                {
+                    IngredientsInside[i].HintLuminosity = true;
+                    hintAddedToScroll = true;
+                }
+            }
+            if (IngredientsInside[i].RequiredTemp != Temp)
+            {
+                isValid = false;
 
-        return true;
+                // Update Scroll here, if not already done
+                if (!IngredientsInside[i].HintTemperature)
+                {
+                    IngredientsInside[i].HintTemperature = true;
+                    hintAddedToScroll = true;
+                }
+            }
+
+            if (!isValid && hintAddedToScroll) break;   // Jump out of Loop if Potion is not valid and a hint was already added
+        }
+
+        if (!isValid && hintAddedToScroll)
+        {
+            // Write to TextBox
+            // ... Your knowledge over the ingredients have been expanded
+        }
+        else if (!isValid && !hintAddedToScroll)
+        {
+            // Nothing new ?
+        }
+
+        return isValid;
     }
 }
