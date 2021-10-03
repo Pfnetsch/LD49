@@ -2374,6 +2374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scroll
       objectReference: {fileID: 0}
+    - target: {fileID: 3281050257786869949, guid: 84ef64a48dfa56840bf56ed122c5535c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3281050257786869951, guid: 84ef64a48dfa56840bf56ed122c5535c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -2422,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 174171268}
+    - target: {fileID: 3798408159371224962, guid: 84ef64a48dfa56840bf56ed122c5535c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 240.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ef64a48dfa56840bf56ed122c5535c, type: 3}
 --- !u!1001 &5375374771967619668
