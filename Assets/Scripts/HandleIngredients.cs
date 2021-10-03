@@ -97,7 +97,7 @@ public class HandleIngredients : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0)) //releasing the button
         {
-            _pop.PopDown();
+            //_pop.PopDown();
 
             if (_ingredientUnderMouse != null)
             {
