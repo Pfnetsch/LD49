@@ -26,7 +26,7 @@ public class Cauldron : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GameManager.State);
+        //Debug.Log(GameManager.State);
         if (GameManager.State == GameManager.GameState.Combining)
         {
             //spriteRenderer.sprite = combinginSprite;

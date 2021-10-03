@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PrepPosition
   - Loeffel
+  - Light
   layers:
   - Default
   - TransparentFX
