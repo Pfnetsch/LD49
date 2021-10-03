@@ -26,9 +26,13 @@ public class GameManager : MonoBehaviour
 
     public static Ingredient[] ActiveIngredients;
 
+    private Scroll _scrollQuestAndHistory;
+
     // Start is called before the first frame update
     void Start()
     {
+        _scrollQuestAndHistory = FindObjectOfType<Scroll>();
+
         // 0 is Herb
         // 1 is Liquid
         // 2 is Solid
@@ -38,6 +42,10 @@ public class GameManager : MonoBehaviour
         var quest = GetQuestForCurrentLevel();
 
         CurrentPotionTask = quest.Item1;
+
+        _scrollQuestAndHistory.SetNewQuest(quest.Item2);
+
+        // Write Quest to Text Box
     }
 
     // Update is called once per frame

@@ -48,9 +48,11 @@ public class Scroll : MonoBehaviour
         UpdateScrollText();
     }
 
-    public void SetNewQuestText(string quest)
+    public void SetNewQuest(PotionDB.Quest quest)
     {
-        _questText = quest;
+        _questText = quest.Name;
+        _questText += "\n";
+        _questText = quest.Riddle;
 
         UpdateScrollText();
     }
