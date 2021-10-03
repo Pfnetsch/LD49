@@ -9,6 +9,7 @@ TagManager:
   - TempLever
   - Light
   - MiniScroll
+  - Torch
   layers:
   - Default
   - TransparentFX
