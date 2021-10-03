@@ -17,15 +17,6 @@ public class LightLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            sprite.color = new Color(30, 30, 70, 130);
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            sprite.color = new Color(30, 30, 70, 0);
-        }
-
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
@@ -39,12 +30,12 @@ public class LightLogic : MonoBehaviour
                 {
                     if(isLit == true)
                     {
-                        sprite.color = new Color(70, 0, 0, 130);
+                        sprite.color = new Color(.1f, .1f, .3f, .5f);
                         isLit = false;
                     }
                     else
                     {
-                        sprite.color = new Color(0, 0, 70, 0);
+                        sprite.color = new Color(.1f, .1f, .3f, 0f);
                         isLit = true;
                     }
                 }
