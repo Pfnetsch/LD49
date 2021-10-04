@@ -1402,6 +1402,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 225819192792178419, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 225819192792178419, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 293003412809074754, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5375374772043644497, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1449,6 +1461,18 @@ PrefabInstance:
     - target: {fileID: 5375374772043644503, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
       propertyPath: m_Name
       value: Cauldron
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611277030542665714, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714788573492824585, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714788573492824585, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd40a1cb5b7245b4e8c8e0fa8bf2efd7, type: 3}
