@@ -35,6 +35,9 @@ public class Ingredient : MonoBehaviour
     {
         _defaultPosition = this.transform.position;
         _anim = GetComponent<Animator>();
+
+        HintLuminosity = false;
+        HintTemperature = false;
     }
 
     // Update is called once per frame

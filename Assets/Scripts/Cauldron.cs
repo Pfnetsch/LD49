@@ -144,8 +144,10 @@ public class Cauldron : MonoBehaviour
                 {
                     GameManager.ActiveIngredients[i].HintLuminosity = true;
                     hintAddedToScroll = true;
+                    break;   // Jump out of Loop if Potion is not valid and a hint was already added
                 }
             }
+
             if (GameManager.ActiveIngredients[i].RequiredTemp != Temp)
             {
                 isValid = false;
@@ -155,10 +157,9 @@ public class Cauldron : MonoBehaviour
                 {
                     GameManager.ActiveIngredients[i].HintTemperature = true;
                     hintAddedToScroll = true;
+                    break;   // Jump out of Loop if Potion is not valid and a hint was already added
                 }
             }
-
-            if (!isValid && hintAddedToScroll) break;   // Jump out of Loop if Potion is not valid and a hint was already added
         }
 
         if (!isValid && hintAddedToScroll)
