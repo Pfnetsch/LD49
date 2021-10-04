@@ -44,23 +44,23 @@ public class NarratorIntro : MonoBehaviour
         {
             case 0:
                 Description.text = "ME: Ah … u-uh … my head … hurts. And I feel sick … uh, where am I? And what happened?";
-                yield return new WaitForSecondsRealtime(5);
+                yield return new WaitForSecondsRealtime(7);
                 break;
 
             case 1:
                 Description.text = "ME:… What’s that on my hand?";
-                yield return new WaitForSecondsRealtime(5);
+                yield return new WaitForSecondsRealtime(7);
                 break;
 
             case 2:
                 Description.fontStyle = FontStyles.Italic;
                 Description.text = "Hey Buddy, the witch party was pretty crazy yesterday, huh? You seemed kinda wasted. We brought you to the alchemy room so you won’t be late for your exam. Good luck with it!!!";
-                yield return new WaitForSecondsRealtime(8);
+                yield return new WaitForSecondsRealtime(10);
                 break;
             case 3:
                 Description.fontStyle = FontStyles.Normal;
                 Description.text = "ME:What … party? What exam?!";
-                yield return new WaitForSecondsRealtime(5);
+                yield return new WaitForSecondsRealtime(7);
                 break;
 
             default:
