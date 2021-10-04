@@ -651,6 +651,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 782136846743223044, guid: 84ef64a48dfa56840bf56ed122c5535c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3281050257786869949, guid: 84ef64a48dfa56840bf56ed122c5535c, type: 3}
       propertyPath: m_Name
       value: Scroll
