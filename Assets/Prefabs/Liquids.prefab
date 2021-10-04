@@ -117,6 +117,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f527cc56569a78843b63c46867969efc, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f49ac165a0fff047b4d49ca731320f0, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 11.6
@@ -222,6 +230,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fadc0088c78e70849b60ab9965999e06, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 34d49b7ad8e216240b9e27fa0583e4a2, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 14.3
@@ -326,6 +342,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 59eee3ee99d1f8345a1b6ff809faf29e, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09921a465b054f243a46b14381a52e74, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 10.5
@@ -430,6 +454,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc793bda8eae065478503c16407c103f, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cec8921e8b2c7b4eb5e34bb165f322f, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 15.5
@@ -534,6 +566,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f030068cf905eb441876d15c60bc6e3f, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1717f1d35272cb44487897ff50cdf8f1, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 12.43
@@ -638,6 +678,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c1f696fdcc30dc1428a1ac2171231b04, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3fa9ec6de31092a4792425ce5031839e, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 10.1

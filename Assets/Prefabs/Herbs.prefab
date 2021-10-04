@@ -119,6 +119,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1178ea1f6efd36349993a02e50d09acb, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37b91cff3e17b7d41be409abf773a7ec, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 13
@@ -235,6 +243,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f0e9e100fb4134f43909e820661594f5, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 79d04efcc0eec8643b8c0087b57ed811, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 18
@@ -334,6 +350,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fffb998222a4b824fb06e3f16f4825d3, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2cbd64abd870fe14e86c7246d62b6718, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 24
@@ -433,6 +457,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 941c7e36c8a4b2f4b8341f6579d86177, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9183c546a8d037346ad4729261bd6cc5, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 18
@@ -533,6 +565,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1e583c41474815745a529e807b72f7f1, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e17cbd5165f2a44db8c20be27339444, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 12
@@ -633,6 +673,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47ac320dbbaaf07498b54311acb06a90, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c03effe5f842ef4c95b6b0e68f5cdca, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 12
@@ -733,6 +781,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 79d8f2dd667d89d40821eff0454f7b21, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e57bddca0134e7488137ac3a0d18b46, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 17
@@ -833,6 +889,14 @@ PrefabInstance:
       propertyPath: RequiredLumi
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: hoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd829f981e6394d47a1fe8fb8361cb9d, type: 3}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: nonHoveredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93040ea70a0f6c148ac1549ed7ec8f82, type: 3}
     - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Size.x
       value: 17
