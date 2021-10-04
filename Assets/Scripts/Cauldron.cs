@@ -119,6 +119,10 @@ public class Cauldron : MonoBehaviour
                 GameManager.ActiveIngredients[1].BackToDefaultPosition();
                 GameManager.ActiveIngredients[2].BackToDefaultPosition();
 
+                GameManager.ActiveIngredients[0] = null;
+                GameManager.ActiveIngredients[1] = null;
+                GameManager.ActiveIngredients[2] = null;
+
                 _cleanUpStep = 0f;
             }
         }
