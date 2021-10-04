@@ -1169,34 +1169,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3311405408272843757, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
-      propertyPath: RequiredTemp
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311405408352653227, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
-      propertyPath: RequiredTemp
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311405408457057134, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
-      propertyPath: RequiredTemp
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311405408652454825, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
-      propertyPath: RequiredTemp
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311405409345597276, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
-      propertyPath: RequiredTemp
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311405409484501050, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
-      propertyPath: RequiredTemp
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311405409808931706, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
-      propertyPath: RequiredTemp
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
 --- !u!1001 &4192120389998356016
