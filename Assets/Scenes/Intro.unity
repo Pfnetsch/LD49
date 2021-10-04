@@ -255,7 +255,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5676007746838669391, guid: 60ef148af226ccb408be7c35feae77f0, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676007746838669391, guid: 60ef148af226ccb408be7c35feae77f0, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676007746838669391, guid: 60ef148af226ccb408be7c35feae77f0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -186.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676007748261002005, guid: 60ef148af226ccb408be7c35feae77f0, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676007748261002005, guid: 60ef148af226ccb408be7c35feae77f0, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5676007748467970128, guid: 60ef148af226ccb408be7c35feae77f0, type: 3}

@@ -283,7 +283,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -741672527
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.11764706, g: 0.11764706, b: 0.27450982, a: 0.50980395}
   m_FlipX: 0
@@ -399,8 +399,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -741672527
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 1075993247170539406, guid: 8b68f77685585a54d8e7aff7bc40ca68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1310,6 +1310,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2815753642720290228, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815753642720290228, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2815753643198811407, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
       propertyPath: m_Name
       value: NarratorCanvas
@@ -1423,8 +1431,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2815753644786579182, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815753644786579182, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815753644786579182, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -138
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
