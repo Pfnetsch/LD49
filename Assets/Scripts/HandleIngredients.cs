@@ -73,7 +73,6 @@ public class HandleIngredients : MonoBehaviour
                 {
                     if (GameManager.ActiveIngredients[0] != null && GameManager.ActiveIngredients[1] != null && GameManager.ActiveIngredients[2] != null)
                     {
-                        Debug.Log("Loeffel");
                         _startMixing = true;
                         GameManager.State = GameManager.GameState.Crafting;
                     }
@@ -96,6 +95,7 @@ public class HandleIngredients : MonoBehaviour
             }
         }
 
+        // Ingredient moved by Mouse
         if (Input.GetMouseButton(0))
         {
             if (_ingredientUnderMouse != null)
@@ -104,7 +104,7 @@ public class HandleIngredients : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0)) //releasing the button
+        if (Input.GetMouseButtonUp(0)) // Releasing the MouseButton
         {
             _pop.PopDown();
 
@@ -116,19 +116,35 @@ public class HandleIngredients : MonoBehaviour
                     {
                         case Ingredient.IngredientType.Herb:
                             _ingredientUnderMouse.transform.position = PrepPositions[0].transform.position;
+
+                            if (GameManager.ActiveIngredients[0] != null) GameManager.ActiveIngredients[0].BackToDefaultPosition();
+
                             GameManager.ActiveIngredients[0] = _ingredientUnderMouse;
                             break;
+
                         case Ingredient.IngredientType.Liquid:
                             _ingredientUnderMouse.transform.position = PrepPositions[1].transform.position;
+
+                            if (GameManager.ActiveIngredients[1] != null) GameManager.ActiveIngredients[1].BackToDefaultPosition();
+
                             GameManager.ActiveIngredients[1] = _ingredientUnderMouse;
                             break;
+
                         case Ingredient.IngredientType.Solid:
                             _ingredientUnderMouse.transform.position = PrepPositions[2].transform.position;
+
+                            if (GameManager.ActiveIngredients[2] != null) GameManager.ActiveIngredients[2].BackToDefaultPosition();
+
                             GameManager.ActiveIngredients[2] = _ingredientUnderMouse;
                             break;
+
                         default:
                             break;
                     }
+                }
+                else
+                {
+                    _ingredientUnderMouse.BackToDefaultPosition();
                 }
 
                 _ingredientUnderMouse = null;

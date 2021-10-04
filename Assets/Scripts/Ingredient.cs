@@ -36,4 +36,9 @@ public class Ingredient : MonoBehaviour
     {
         
     }
+
+    public void BackToDefaultPosition()
+    {
+        transform.position = _defaultPosition;
+    }
 }
