@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cauldron : MonoBehaviour
 {
-    public PotionDB.Temperature Temp = PotionDB.Temperature.Moderate;
-    public PotionDB.Luminosity Lumi = PotionDB.Luminosity.Bright;
+    public PotionDB.Temperature Temp;
+    public PotionDB.Luminosity Lumi;
 
     public Animator animator;
 
@@ -14,6 +14,9 @@ public class Cauldron : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Temp = PotionDB.Temperature.Moderate;
+        Lumi = PotionDB.Luminosity.Bright;
+
         _scrollQuestAndHistory = FindObjectOfType<Scroll>();
     }
 

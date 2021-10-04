@@ -14,6 +14,7 @@ public static class PotionDB
     [System.Flags]
     public enum Luminosity
     {
+        None = 0x0,
         Bright = 0x1,
         Dark = 0x2,
         Both = 0x3
