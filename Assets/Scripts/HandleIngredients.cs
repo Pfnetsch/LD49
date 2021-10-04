@@ -85,7 +85,7 @@ public class HandleIngredients : MonoBehaviour
                         _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
 
                         //popup handling
-                        _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.description, _ingredientUnderMouse.unlocks);
+                        _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.PotionDescriptionAndRequirements());
 
                         print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
                     }

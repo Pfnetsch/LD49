@@ -10,7 +10,7 @@ public class PopUpSystem : MonoBehaviour
     public TMP_Text popupName;
     public TMP_Text pupupDescription;
 
-    public void PopUp(string name, string description, List<string> unlocks)
+    public void PopUp(string name, string description)
     {
         popUpBox.SetActive(true);
         popupName.text = name;

@@ -13,7 +13,6 @@ public class Ingredient : MonoBehaviour
 
     public string id;
     public string description;
-    public List<string> unlocks;
 
     public PotionDB.Luminosity RequiredLumi;
     public PotionDB.Temperature RequiredTemp;
@@ -40,5 +39,15 @@ public class Ingredient : MonoBehaviour
     public void BackToDefaultPosition()
     {
         transform.position = _defaultPosition;
+    }
+
+    public string PotionDescriptionAndRequirements()
+    {
+        string desc = description;
+
+        if (HintTemperature) desc += "\n\n" + "Likes it " + RequiredTemp.ToString();
+        if (HintLuminosity) desc += "\n\n" + "Likes it " + RequiredLumi.ToString();
+
+        return desc;
     }
 }
