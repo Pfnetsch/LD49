@@ -61,7 +61,7 @@ public class NarratorIntro : MonoBehaviour
 
             default:
                 stop = true;
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
         }
 

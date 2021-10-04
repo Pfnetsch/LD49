@@ -11,9 +11,11 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Game has exited");
     }
+
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        FindObjectOfType<AudioScript>().SwitchToIntroMode();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Start is called before the first frame update
