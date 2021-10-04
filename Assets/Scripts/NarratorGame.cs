@@ -16,7 +16,7 @@ public class NarratorGame : MonoBehaviour
     private PotionDB.Quest _currentQuest;
 
     private bool _switchToQuest = false;
-    private bool _gameFinished = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,11 +53,6 @@ public class NarratorGame : MonoBehaviour
             _switchToQuest = false;
             ShowCurrentQuest();
         }
-
-        if (_gameFinished)
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 
     public void ShowIntroFromProf()
@@ -70,7 +65,8 @@ public class NarratorGame : MonoBehaviour
     {
         Description.text = text;
         NarratorBox.SetActive(true);
-        _gameFinished = true;
+
+        StartCoroutine(EndGameRoutine());
     }
 
     public void ShowCustomText(string text)
@@ -110,6 +106,13 @@ public class NarratorGame : MonoBehaviour
         Description.text += _currentQuest.Riddle;
 
         _questCoroutine = StartCoroutine(QuestRoutine());
+    }
+
+    IEnumerator EndGameRoutine()
+    {
+        yield return new WaitForSecondsRealtime(10);
+
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator QuestRoutine()
