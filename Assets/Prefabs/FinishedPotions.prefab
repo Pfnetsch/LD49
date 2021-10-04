@@ -437,15 +437,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potionTextures:
-  - {fileID: 2800000, guid: b0ce4a25c22af2d4aa9e64cdedd3086b, type: 3}
-  - {fileID: 2800000, guid: ae52734b387e71448a17e30f43adf951, type: 3}
-  - {fileID: 2800000, guid: afcde26cb62a3644e90d6e6e1af03ac6, type: 3}
-  - {fileID: 2800000, guid: b20cefc5ea50a2f468edaaa48d446e1e, type: 3}
-  - {fileID: 2800000, guid: 13ea1e1886bc81c4087e4ba4f541a22c, type: 3}
-  - {fileID: 2800000, guid: 3b278f91866bc1f488caa1f411b5f0a2, type: 3}
-  - {fileID: 2800000, guid: fa9c5d6526511264f8c5c16c5e2f7356, type: 3}
-  - {fileID: 2800000, guid: 03ab313a5983d8a4588b52dbdab32715, type: 3}
-  - {fileID: 2800000, guid: 5bf886fb4ff36714981fee6777ea7c2e, type: 3}
+  - {fileID: 21300000, guid: b0ce4a25c22af2d4aa9e64cdedd3086b, type: 3}
+  - {fileID: 21300000, guid: ae52734b387e71448a17e30f43adf951, type: 3}
+  - {fileID: 21300000, guid: afcde26cb62a3644e90d6e6e1af03ac6, type: 3}
+  - {fileID: 21300000, guid: b20cefc5ea50a2f468edaaa48d446e1e, type: 3}
+  - {fileID: 21300000, guid: 13ea1e1886bc81c4087e4ba4f541a22c, type: 3}
+  - {fileID: 21300000, guid: 3b278f91866bc1f488caa1f411b5f0a2, type: 3}
+  - {fileID: 21300000, guid: fa9c5d6526511264f8c5c16c5e2f7356, type: 3}
+  - {fileID: 21300000, guid: 03ab313a5983d8a4588b52dbdab32715, type: 3}
+  - {fileID: 21300000, guid: 5bf886fb4ff36714981fee6777ea7c2e, type: 3}
   AnimationSpeed: 0.4
 --- !u!1 &8887666750546324795
 GameObject:

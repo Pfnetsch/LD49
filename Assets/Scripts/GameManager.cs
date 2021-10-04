@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public enum GameLevel
     {
+        Nobody = -1,
         Apprentice,
         Initiate,
         Master
@@ -49,10 +50,7 @@ public class GameManager : MonoBehaviour
         ActiveIngredients = new Ingredient[3];
 
         // Retrieve first Quest
-        var poQu = GetQuestForCurrentLevel();
-
-        CurrentPotion = poQu.Item1;
-        CurrentQuest = poQu.Item2;
+        SetQuestForNextLevel();
 
         _scrollQuestAndHistory.SetNewQuest(CurrentQuest);
 
@@ -103,10 +101,15 @@ public class GameManager : MonoBehaviour
         else Cursor.SetCursor(MousePointerDefault, new Vector2(0, 0), CursorMode.Auto);
     }
 
-    (PotionDB.Potion, PotionDB.Quest) GetQuestForCurrentLevel()
+    public static void SetQuestForNextLevel()
     {
+        Level += 1; // Go to next Level
+
         int randomIndex = Random.Range(0, PotionDB.Potions[(int)Level].Count - 1);
 
-        return PotionDB.Potions[(int)Level][randomIndex];
+        var poQu = PotionDB.Potions[(int)Level][randomIndex];
+
+        CurrentPotion = poQu.Item1;
+        CurrentQuest = poQu.Item2;
     }
 }
