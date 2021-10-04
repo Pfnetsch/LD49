@@ -66,7 +66,7 @@ public class FinishedPotions : MonoBehaviour
 
             _potionToReveal = null;
 
-            GameManager.SetQuestForNextLevel();
+            GameManager.SetQuestForNextLevel(true);
         }
     }
 

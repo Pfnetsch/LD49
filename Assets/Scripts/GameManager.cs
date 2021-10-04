@@ -31,8 +31,7 @@ public class GameManager : MonoBehaviour
     public Texture2D MousePointerDefault;
     public Texture2D MousePointerActive;
 
-    public NarratorGame Narrator;
-
+    public static NarratorGame Narrator;
 
     private Scroll _scrollQuestAndHistory;
     private Collider2D[] _allColliders;
@@ -44,6 +43,8 @@ public class GameManager : MonoBehaviour
 
         _scrollQuestAndHistory = FindObjectOfType<Scroll>();
 
+        Narrator = FindObjectOfType<NarratorGame>();
+
         _allColliders = FindObjectsOfType<Collider2D>();
 
         // 0 is Herb
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         ActiveIngredients = new Ingredient[3];
 
         // Retrieve first Quest
-        SetQuestForNextLevel();
+        SetQuestForNextLevel(false);
 
         _scrollQuestAndHistory.SetNewQuest(CurrentQuest);
 
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
         else Cursor.SetCursor(MousePointerDefault, new Vector2(0, 0), CursorMode.Auto);
     }
 
-    public static void SetQuestForNextLevel()
+    public static void SetQuestForNextLevel(bool showQuestTextBox)
     {
         Level += 1; // Go to next Level
 
@@ -114,5 +115,11 @@ public class GameManager : MonoBehaviour
 
         CurrentPotion = poQu.Item1;
         CurrentQuest = poQu.Item2;
+
+        if (Narrator != null)
+        {
+            Narrator.SetCurrentQuest(CurrentQuest);
+            if (showQuestTextBox) Narrator.ShowCurrentQuest();
+        }
     }
 }
