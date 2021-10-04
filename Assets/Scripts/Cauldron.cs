@@ -42,6 +42,8 @@ public class Cauldron : MonoBehaviour
                 // Add to History
                 _scrollQuestAndHistory.AddHistoryItem("Success: " + potion.ToString());
 
+                // RevealFinishedPotion(0);
+
                 // The right potion was created - Wuhu
                 // Set Animator
 
