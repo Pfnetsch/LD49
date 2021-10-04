@@ -61,6 +61,7 @@ public class NarratorIntro : MonoBehaviour
 
             default:
                 stop = true;
+                FindObjectOfType<AudioScript>().SwitchToGameMode();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 break;
         }
