@@ -29,10 +29,12 @@ public class Cauldron : MonoBehaviour
     {
         if (GameManager.State == GameManager.GameState.Combining)
         {
+            animator.ResetTrigger("idle");
             animator.SetTrigger("combining");
         }
         else if(GameManager.State == GameManager.GameState.Crafting)
         {
+            animator.ResetTrigger("combining");
             animator.SetTrigger("crafting");
         }
         else if (GameManager.State == GameManager.GameState.PotionReady)
@@ -53,6 +55,7 @@ public class Cauldron : MonoBehaviour
                 // The right potion was created - Wuhu
                 // Set Animator
                 GameManager.State = GameManager.GameState.CleanUp;
+                animator.ResetTrigger("crafting");
                 animator.SetTrigger("idle");
             }
             else if (CheckIfPotionIsValidAndUpdateScroll())
@@ -82,6 +85,7 @@ public class Cauldron : MonoBehaviour
                 _scrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
 
                 GameManager.State = GameManager.GameState.CleanUp;
+                animator.ResetTrigger("crafting");
                 animator.SetTrigger("idle");
             }
             else 
@@ -96,6 +100,7 @@ public class Cauldron : MonoBehaviour
                 // Potion is unstable
                 // Set Animator
                 GameManager.State = GameManager.GameState.CleanUp;
+                animator.ResetTrigger("crafting");
                 animator.SetTrigger("unstable");
             }
         }
@@ -107,6 +112,7 @@ public class Cauldron : MonoBehaviour
             {
                 GameManager.State = GameManager.GameState.Idle;
 
+                animator.ResetTrigger("unstable");
                 animator.SetTrigger("idle");
 
                 GameManager.ActiveIngredients[0].BackToDefaultPosition();

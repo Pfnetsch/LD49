@@ -36,6 +36,7 @@ public class TorchLogic : MonoBehaviour
                 {
                     if(isLit == true)
                     {
+                        animator.ResetTrigger("burn");
                         animator.SetTrigger("smoke");
                         sprite.color = new Color(.1f, .1f, .3f, .5f);
                         isLit = false;
@@ -43,6 +44,7 @@ public class TorchLogic : MonoBehaviour
                     }
                     else
                     {
+                        animator.ResetTrigger("smoke");
                         animator.SetTrigger("burn");
                         sprite.color = new Color(.1f, .1f, .3f, 0f);
                         isLit = true;

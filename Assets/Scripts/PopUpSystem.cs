@@ -15,6 +15,7 @@ public class PopUpSystem : MonoBehaviour
         popUpBox.SetActive(true);
         popupName.text = name;
         pupupDescription.text = description;
+        animator.ResetTrigger("close");
         animator.SetTrigger("open");
     }
     public void PopDown()
@@ -22,6 +23,7 @@ public class PopUpSystem : MonoBehaviour
         if (popUpBox.activeSelf)
         {
             popUpBox.SetActive(false);
+            animator.ResetTrigger("open");
             animator.SetTrigger("close");
         }
     }
