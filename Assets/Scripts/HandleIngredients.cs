@@ -13,7 +13,7 @@ public class HandleIngredients : MonoBehaviour
     private Vector3 _dragOffset;
 
     private bool _startMixing = false;
-    private float _routeIteration = 0f;
+    private float _curveAnimationStep = 0f;
 
     public float AnimationSpeed = 0.5f;
 
@@ -29,10 +29,10 @@ public class HandleIngredients : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //check if crafting has finished and reset everythign back to idle states
-        if (_routeIteration >= 1)
+        if (_curveAnimationStep >= 1)
         {
             GameManager.State = GameManager.GameState.PotionReady;
-            _routeIteration = 0;
+            _curveAnimationStep = 0;
             //ingredientsOnPrepPositions[0] = null;
             //ingredientsOnPrepPositions[1] = null;
             //ingredientsOnPrepPositions[2] = null;
@@ -45,18 +45,18 @@ public class HandleIngredients : MonoBehaviour
             GameManager.State = GameManager.GameState.Combining;
         }
 
-        if (_startMixing && _routeIteration <= 1)
+        if (_startMixing && _curveAnimationStep <= 1)
         {
             for (int i = 0; i < 3; i++)
             {
-                Transform[] pathPoints = PrepPositions[i].GetComponentsInChildren<Transform>();
+                Transform[] pathPoints = PrepPositions[i].GetComponentsInChildren<Transform>(); // One Entry not needed - Parent
 
-                Vector2 _positionOnRoute = Mathf.Pow(1 - _routeIteration, 3) * pathPoints[1].position + 3 * Mathf.Pow(1 - _routeIteration, 2) * _routeIteration * pathPoints[2].position + 3 * (1 - _routeIteration) * Mathf.Pow(_routeIteration, 2) * pathPoints[3].position + Mathf.Pow(_routeIteration, 3) * pathPoints[4].position;
+                Vector2 _positionOnRoute = Mathf.Pow(1 - _curveAnimationStep, 3) * pathPoints[1].position + 3 * Mathf.Pow(1 - _curveAnimationStep, 2) * _curveAnimationStep * pathPoints[2].position + 3 * (1 - _curveAnimationStep) * Mathf.Pow(_curveAnimationStep, 2) * pathPoints[3].position + Mathf.Pow(_curveAnimationStep, 3) * pathPoints[4].position;
 
                 GameManager.ActiveIngredients[i].transform.position = _positionOnRoute; // new Vector3(_positionOnRoute.x, _positionOnRoute.y, _herbOnPrep.transform.position.y);
             }
 
-            _routeIteration += Time.deltaTime * AnimationSpeed;
+            _curveAnimationStep += Time.deltaTime * AnimationSpeed;
         }
 
         if (Input.GetMouseButtonDown(0))
