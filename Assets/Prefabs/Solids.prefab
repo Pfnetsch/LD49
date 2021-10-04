@@ -138,6 +138,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredTemp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: hoveredSprite
       value: 
       objectReference: {fileID: 21300000, guid: c78cedbc0e77368468f61517923dcffc, type: 3}
@@ -247,6 +251,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredTemp
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -368,6 +376,10 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredTemp
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: hoveredSprite
       value: 
       objectReference: {fileID: 21300000, guid: 7c1e211a81e2cb3409603ba90b98b7a2, type: 3}
@@ -478,6 +490,10 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredTemp
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: hoveredSprite
@@ -592,6 +608,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredTemp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: hoveredSprite
       value: 
       objectReference: {fileID: 21300000, guid: fed267aa63b6f494896171e7e5733f01, type: 3}
@@ -699,6 +719,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredTemp
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -811,6 +835,10 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: RequiredTemp
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: hoveredSprite
