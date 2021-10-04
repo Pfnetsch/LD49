@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NarratorGame : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class NarratorGame : MonoBehaviour
     private PotionDB.Quest _currentQuest;
 
     private bool _switchToQuest = false;
+    private bool _gameFinished = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,12 +53,24 @@ public class NarratorGame : MonoBehaviour
             _switchToQuest = false;
             ShowCurrentQuest();
         }
+
+        if (_gameFinished)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void ShowIntroFromProf()
     {
         NarratorBox.SetActive(true);
         _introCoroutine = StartCoroutine(ProfIntroRoutine());
+    }
+
+    public void ShowEndScreen(string text)
+    {
+        Description.text = text;
+        NarratorBox.SetActive(true);
+        _gameFinished = true;
     }
 
     public void ShowCustomText(string text)

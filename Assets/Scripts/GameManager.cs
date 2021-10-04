@@ -111,6 +111,12 @@ public class GameManager : MonoBehaviour
 
     public static void SetQuestForNextLevel(bool showQuestTextBox)
     {
+        if (Level == GameLevel.Master)
+        {
+            Narrator.ShowEndScreen("Exam finished! Congratulations!");
+            return;
+        }
+
         Level += 1; // Go to next Level
 
         int randomIndex = Random.Range(0, PotionDB.Potions[(int)Level].Count - 1);
