@@ -76,7 +76,7 @@ public class TempControl : MonoBehaviour
             else
             {
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-                if (_cauldron != null) _cauldron.Temp = PotionDB.Temperature.Moderate;
+                if (_cauldron != null) _cauldron.Temp = PotionDB.Temperature.Neutral;
                 _ice.SetActive(false);
                 _fire.SetActive(false);
             }

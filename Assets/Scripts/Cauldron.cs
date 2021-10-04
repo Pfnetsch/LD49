@@ -17,7 +17,7 @@ public class Cauldron : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Temp = PotionDB.Temperature.Moderate;
+        Temp = PotionDB.Temperature.Neutral;
         Lumi = PotionDB.Luminosity.Bright;
 
         _scrollQuestAndHistory = FindObjectOfType<Scroll>();
@@ -140,7 +140,7 @@ public class Cauldron : MonoBehaviour
 
         for (int i = 0; i < GameManager.ActiveIngredients.Length; i++)
         {
-            if (GameManager.ActiveIngredients[i].RequiredLumi != Lumi)
+            if (!GameManager.ActiveIngredients[i].RequiredLumi.HasFlag(Lumi))
             {
                 isValid = false;
 
@@ -153,7 +153,7 @@ public class Cauldron : MonoBehaviour
                 }
             }
 
-            if (GameManager.ActiveIngredients[i].RequiredTemp != Temp)
+            if (!GameManager.ActiveIngredients[i].RequiredTemp.HasFlag(Temp))
             {
                 isValid = false;
 
