@@ -58,7 +58,7 @@ public class Cauldron : MonoBehaviour
                 animator.ResetTrigger("crafting");
                 animator.SetTrigger("idle");
             }
-            else if (CheckIfPotionIsValidAndUpdateScroll())
+            else if (CheckIfPotionIsValidAndUpdateScroll(out bool learnedSomething))
             {
                 // Potion is valid but was not requested
                 // Set Animator
@@ -88,11 +88,15 @@ public class Cauldron : MonoBehaviour
                 animator.ResetTrigger("crafting");
                 animator.SetTrigger("idle");
             }
-            else 
+            else // unstable
             {
                 int rndUnstableText = Random.Range(0, TextDB.PotionTextsUnstable.Count - 1);
 
-                GameManager.Narrator.ShowCustomText(TextDB.PotionTextsUnstable[rndUnstableText]);
+                string unstableHint = TextDB.PotionTextsUnstable[rndUnstableText];
+
+                if (learnedSomething) unstableHint += "\n\n" + "You learned something!";
+
+                GameManager.Narrator.ShowCustomText(unstableHint);
 
                 // Add to History
                 _scrollQuestAndHistory.AddHistoryItem("Unstable: " + potion.ToString());
@@ -128,10 +132,11 @@ public class Cauldron : MonoBehaviour
         }
     }
 
-    public bool CheckIfPotionIsValidAndUpdateScroll()
+    public bool CheckIfPotionIsValidAndUpdateScroll(out bool learnedSomething)
     {
         bool isValid = true;
         bool hintAddedToScroll = false;
+        learnedSomething = false;
 
         for (int i = 0; i < GameManager.ActiveIngredients.Length; i++)
         {
@@ -164,11 +169,7 @@ public class Cauldron : MonoBehaviour
 
         if (!isValid && hintAddedToScroll)
         {
-            GameManager.Narrator.ShowCustomText("You learned something new!");
-        }
-        else if (!isValid && !hintAddedToScroll)
-        {
-            // Nothing new ?
+            learnedSomething = true;
         }
 
         return isValid;
