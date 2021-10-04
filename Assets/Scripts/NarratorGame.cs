@@ -40,7 +40,7 @@ public class NarratorGame : MonoBehaviour
 
             if (_questCoroutine != null)
             {
-                StopCoroutine(_introCoroutine);
+                StopCoroutine(_questCoroutine);
                 NarratorBox.SetActive(false);
             }
         }
@@ -56,6 +56,12 @@ public class NarratorGame : MonoBehaviour
     {
         NarratorBox.SetActive(true);
         _introCoroutine = StartCoroutine(ProfIntroRoutine());
+    }
+
+    public void ShowCustomText(string text)
+    {
+        Description.text = text;
+        _questCoroutine = StartCoroutine(QuestRoutine());
     }
 
     public void SetCurrentQuest(PotionDB.Quest quest)

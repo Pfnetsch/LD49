@@ -73,11 +73,11 @@ public class Scroll : MonoBehaviour
 
     public void UpdateScrollText()
     {
-        UItext.text = _questText + "\n\n";
+        UItext.text = _questText;
 
         for (int i = 0; i < _history.Count; i++)
         {
-            UItext.text += "* " + _history[_history.Count - 1 - i];
+            UItext.text += "\n\n" + "* " + _history[_history.Count - 1 - i];
         }
     }
 }

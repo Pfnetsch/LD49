@@ -10,6 +10,7 @@ public class Cauldron : MonoBehaviour
     public Animator animator;
 
     private Scroll _scrollQuestAndHistory;
+    private FinishedPotions _finishedPotions;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class Cauldron : MonoBehaviour
         Lumi = PotionDB.Luminosity.Bright;
 
         _scrollQuestAndHistory = FindObjectOfType<Scroll>();
+        _finishedPotions = FindObjectOfType<FinishedPotions>();
     }
 
     // Update is called once per frame
@@ -42,11 +44,12 @@ public class Cauldron : MonoBehaviour
                 // Add to History
                 _scrollQuestAndHistory.AddHistoryItem("Success: " + potion.ToString());
 
-                // RevealFinishedPotion(0);
+                _finishedPotions.RevealFinishedPotion(GameManager.CurrentQuest.PotionTextureIndex);
+
+                GameManager.Narrator.ShowCustomText("That's it!");
 
                 // The right potion was created - Wuhu
                 // Set Animator
-
                 GameManager.State = GameManager.GameState.PotionReady;
                 animator.SetTrigger("idle");
             }
@@ -59,19 +62,19 @@ public class Cauldron : MonoBehaviour
 
                 int rndValidText = Random.Range(0, TextDB.PotionTextsValid.Count - 1);
 
-                // TextBox = TextDB.PotionTextsValid[rndValidText];
+                string validPotionText = TextDB.PotionTextsValid[rndValidText];
 
-                if (correctIngredients == 0) ; // Set Text "Oh come on, it's a beginners task..."
+                if (correctIngredients == 0) validPotionText += "\n\n" + "Oh come on, it's a beginners task..."; 
                 else if (correctIngredients == 1)
                 {
-
-                    ; // Set Text "That was close, give it a second thought if you really need ..." + wrongOrRightIngredient
+                    validPotionText += "\n\n" + "That was close, give it a second thought if you really need " + wrongOrRightIngredient;
                 }
                 else if (correctIngredients == 2)
                 {
-
-                    ; // Set Text "Well, I mean the … was a good idea. The others…." + wrongOrRightIngredient
+                    validPotionText += "\n\n" + "Well, I mean the " + wrongOrRightIngredient + " was a good idea. The others….";
                 }
+
+                GameManager.Narrator.ShowCustomText(validPotionText);
 
                 // Add to History
                 _scrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());

@@ -76,19 +76,16 @@ public class HandleIngredients : MonoBehaviour
                     }
                 }
 
-                if (ingredientHit)
+                _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
+
+                if (_ingredientUnderMouse != null)
                 {
-                    _ingredientUnderMouse = ingredientHit.transform.gameObject.GetComponent<Ingredient>();
+                    _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
 
-                    if (_ingredientUnderMouse != null)
-                    {
-                        _dragOffset = _ingredientUnderMouse.transform.position - mousePos;
+                    //popup handling
+                    _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.PotionDescriptionAndRequirements());
 
-                        //popup handling
-                        _pop.PopUp(_ingredientUnderMouse.name, _ingredientUnderMouse.PotionDescriptionAndRequirements());
-
-                        print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
-                    }
+                    print("Click on Intredient with type: " + _ingredientUnderMouse.Type);
                 }
             }
         }
