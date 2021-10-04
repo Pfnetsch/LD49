@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         PotionReady
     }
 
-    public static GameLevel Level = GameLevel.Apprentice;
+    public static GameLevel Level = GameLevel.Nobody;
     public static GameState State = GameState.Idle;
 
     public static PotionDB.Potion CurrentPotion;
@@ -58,7 +58,10 @@ public class GameManager : MonoBehaviour
         _scrollQuestAndHistory.SetNewQuest(CurrentQuest);
 
         // Write Quest to Text Box
-        if (Narrator != null) Narrator.ShowIntroFromProf();
+        if (Narrator != null)
+        {
+            Narrator.ShowIntroFromProf();
+        }
     }
 
     // Update is called once per frame

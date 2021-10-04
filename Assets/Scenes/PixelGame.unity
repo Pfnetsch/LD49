@@ -557,7 +557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MousePointerDefault: {fileID: 2800000, guid: 1d23e0691ab1a7f4daf5f6c91abea59f, type: 3}
   MousePointerActive: {fileID: 2800000, guid: 449effe80f260db479d1ced17d129a66, type: 3}
-  Narrator: {fileID: 2107392489188404032}
 --- !u!114 &866854985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,17 +1115,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9434088ef6ab314ab386fb708ca1fe3, type: 3}
---- !u!114 &2107392489188404032 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2107392489188404032, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
-  m_PrefabInstance: {fileID: 4192120389998356016}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55c290aaec289914a87343846ab5b9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2782432209078818453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1283,10 +1271,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 174171268}
-    - target: {fileID: 2815753643198811890, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da7ea5bed295be34689044860d0f81ba, type: 3}
 --- !u!1001 &4861068357363010198

@@ -14,6 +14,7 @@ public class NarratorGame : MonoBehaviour
 
     private PotionDB.Quest _currentQuest;
 
+    private bool _switchToQuest;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,12 @@ public class NarratorGame : MonoBehaviour
                 StopCoroutine(_introCoroutine);
                 NarratorBox.SetActive(false);
             }
+        }
+
+        if (_switchToQuest)
+        {
+            _switchToQuest = false;
+            ShowCurrentQuest();
         }
     }
 
@@ -73,15 +80,16 @@ public class NarratorGame : MonoBehaviour
                 break;
         }
         Description.text += "potion:\n";
-        Description.text += "\t" + _currentQuest.Name + "\n\n";
+        Description.text += _currentQuest.Name + "\n\n";
         Description.text += _currentQuest.Description + "\n";
         Description.text += _currentQuest.Riddle;
 
-        _introCoroutine = StartCoroutine(QuestRoutine());
+        _questCoroutine = StartCoroutine(QuestRoutine());
     }
 
     IEnumerator QuestRoutine()
     {
+        yield return new WaitForSecondsRealtime(1);
         NarratorBox.SetActive(true);
         yield return new WaitForSecondsRealtime(20);
         NarratorBox.SetActive(false);
@@ -89,6 +97,8 @@ public class NarratorGame : MonoBehaviour
 
     IEnumerator ProfIntroRoutine()
     {
+        bool stop = false;
+
         switch (_idxText)
         {
             case 0:
@@ -133,12 +143,12 @@ public class NarratorGame : MonoBehaviour
 
             default:
                 NarratorBox.SetActive(false);
-                yield return new WaitForSecondsRealtime(5);
-                ShowCurrentQuest();
+                stop = true;
+                _switchToQuest = true;
                 break;
         }
 
         _idxText++;
-        _introCoroutine = StartCoroutine(ProfIntroRoutine());
+        if (!stop) _introCoroutine = StartCoroutine(ProfIntroRoutine());
     }
 }
