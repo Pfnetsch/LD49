@@ -43,6 +43,7 @@ public class NarratorGame : MonoBehaviour
 
     public void ShowIntroFromProf()
     {
+        NarratorBox.SetActive(true);
         _introCoroutine = StartCoroutine(ProfIntroRoutine());
     }
 
