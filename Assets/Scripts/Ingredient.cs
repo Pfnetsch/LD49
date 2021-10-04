@@ -14,6 +14,7 @@ public class Ingredient : MonoBehaviour
     public Sprite nonHoveredSprite;
     public Sprite hoveredSprite;
 
+
     public string id;
     public string description;
 
@@ -26,11 +27,14 @@ public class Ingredient : MonoBehaviour
     public IngredientType Type;
 
     private Vector3 _defaultPosition;
+    private Animator _anim;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _defaultPosition = this.transform.position;
+        _anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -61,6 +65,13 @@ public class Ingredient : MonoBehaviour
         Debug.Log("Mouse is over GameObject.");
         SpriteRenderer ingredientRenderer = GetComponent<SpriteRenderer>();
         ingredientRenderer.sprite = hoveredSprite;
+
+        
+        if (_anim != null)
+        {
+            _anim.ResetTrigger("animated");
+            _anim.SetTrigger("hover");
+        }
     }
 
     void OnMouseExit()
@@ -69,5 +80,12 @@ public class Ingredient : MonoBehaviour
         Debug.Log("Mouse is no longer on GameObject.");
         SpriteRenderer ingredientRenderer = GetComponent<SpriteRenderer>();
         ingredientRenderer.sprite = nonHoveredSprite;
+
+        _anim = GetComponent<Animator>();
+        if (_anim != null)
+        {
+            _anim.ResetTrigger("hover");
+            _anim.SetTrigger("animated");
+        }
     }
 }
