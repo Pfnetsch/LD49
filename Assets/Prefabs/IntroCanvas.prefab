@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 5372523628714555896}
   - component: {fileID: 5372523628714555897}
   - component: {fileID: 5372523628714555894}
+  - component: {fileID: 1632925299}
   m_Layer: 5
   m_Name: IntroCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5372523628714555899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -100,6 +101,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1632925299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5372523628714555895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c290aaec289914a87343846ab5b9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpBox: {fileID: 5372523629233985389}
+  pupupDescription: {fileID: 5372523629034025214}
 --- !u!1 &5372523628878368242
 GameObject:
   m_ObjectHideFlags: 0
