@@ -28,6 +28,8 @@ public class HandleIngredients : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         //check if crafting has finished and reset everythign back to idle states
         if (_routeIteration >= 1)
         {
@@ -58,9 +60,6 @@ public class HandleIngredients : MonoBehaviour
 
             _routeIteration += Time.deltaTime * AnimationSpeed;
         }
-
-
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
         {

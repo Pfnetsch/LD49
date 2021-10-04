@@ -28,10 +28,14 @@ public class GameManager : MonoBehaviour
 
     private Scroll _scrollQuestAndHistory;
 
+    private Collider2D[] _allColliders;
+
     // Start is called before the first frame update
     void Start()
     {
         _scrollQuestAndHistory = FindObjectOfType<Scroll>();
+
+        _allColliders = FindObjectsOfType<Collider2D>();
 
         // 0 is Herb
         // 1 is Liquid
@@ -51,6 +55,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             List<string> unlocks = new List<string>();
@@ -62,7 +68,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             Vector2 origin = new Vector2(mousePos.x, mousePos.y);
             RaycastHit2D ingredientHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
 
@@ -74,6 +80,20 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        bool inCollider = false;
+
+        foreach (var coll in _allColliders)
+        {
+            if (coll.OverlapPoint(mousePos))
+            {
+                inCollider = true;
+                break;
+            }
+        }
+
+        //if (inCollider) Cursor.SetCursor()
+        //else 
     }
 
     (PotionDB.Potion, PotionDB.Quest) GetQuestForCurrentLevel()
