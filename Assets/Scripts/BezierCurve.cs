@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrepRoute : MonoBehaviour
+public class BezierCurve : MonoBehaviour
 {
     [SerializeField]
     private Transform[] controlPoints;
 
     private Vector2 gizmosPosition;
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         for (float t = 0; t <= 1; t += 0.05f)
         {
