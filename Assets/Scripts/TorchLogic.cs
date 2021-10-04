@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TorchLogic : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class TorchLogic : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Vector2 origin = new Vector2(mousePos.x, mousePos.y);
             RaycastHit2D collisionHit = Physics2D.Raycast(origin, Vector2.zero, 0f);
