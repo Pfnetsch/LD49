@@ -26,8 +26,12 @@ public class NarratorIntro : MonoBehaviour
         {
             StopCoroutine(_coroutine);
             _idxText++;
-            
-            if (_idxText == 4) SceneManager.LoadScene(2);
+
+            if (_idxText == 4)
+            {
+                FindObjectOfType<AudioScript>().SwitchToGameMode();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
             else _coroutine = StartCoroutine(waiter());
         }
     }
