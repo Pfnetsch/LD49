@@ -1249,6 +1249,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3311405408457057123, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
+      propertyPath: m_Name
+      value: Hair of Gunther
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311405408457057134, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
+      propertyPath: id
+      value: Hair of Gunther
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece8d43238d5b134d9d22520b47591f9, type: 3}
 --- !u!1001 &4192120389998356016

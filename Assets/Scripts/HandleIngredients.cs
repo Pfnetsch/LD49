@@ -110,14 +110,6 @@ public class HandleIngredients : MonoBehaviour
                     switch (_ingredientUnderMouse.Type)
                     {
                         case Ingredient.IngredientType.Herb:
-                            _ingredientUnderMouse.transform.position = PrepPositions[0].transform.position;
-
-                            if (GameManager.ActiveIngredients[0] != null) GameManager.ActiveIngredients[0].BackToDefaultPosition();
-
-                            GameManager.ActiveIngredients[0] = _ingredientUnderMouse;
-                            break;
-
-                        case Ingredient.IngredientType.Liquid:
                             _ingredientUnderMouse.transform.position = PrepPositions[1].transform.position;
 
                             if (GameManager.ActiveIngredients[1] != null) GameManager.ActiveIngredients[1].BackToDefaultPosition();
@@ -125,12 +117,20 @@ public class HandleIngredients : MonoBehaviour
                             GameManager.ActiveIngredients[1] = _ingredientUnderMouse;
                             break;
 
-                        case Ingredient.IngredientType.Solid:
+                        case Ingredient.IngredientType.Liquid:
                             _ingredientUnderMouse.transform.position = PrepPositions[2].transform.position;
 
                             if (GameManager.ActiveIngredients[2] != null) GameManager.ActiveIngredients[2].BackToDefaultPosition();
 
                             GameManager.ActiveIngredients[2] = _ingredientUnderMouse;
+                            break;
+
+                        case Ingredient.IngredientType.Solid:
+                            _ingredientUnderMouse.transform.position = PrepPositions[0].transform.position;
+
+                            if (GameManager.ActiveIngredients[0] != null) GameManager.ActiveIngredients[0].BackToDefaultPosition();
+
+                            GameManager.ActiveIngredients[0] = _ingredientUnderMouse;
                             break;
 
                         default:
