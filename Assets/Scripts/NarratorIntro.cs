@@ -4,10 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class IntroScript : MonoBehaviour
+public class NarratorIntro : MonoBehaviour
 {
-    public GameObject popUpBox;
-    public TMP_Text pupupDescription;
+    public GameObject NarratorBox;
+    public TMP_Text Description;
 
     private Coroutine _coroutine;
     private int _idxText;
@@ -37,23 +37,23 @@ public class IntroScript : MonoBehaviour
         switch (_idxText)
         {
             case 0:
-                pupupDescription.text = "ME: Ah … u-uh … my head … hurts. And I feel sick … uh, where am I? And what happened?";
+                Description.text = "ME: Ah … u-uh … my head … hurts. And I feel sick … uh, where am I? And what happened?";
                 yield return new WaitForSecondsRealtime(5);
                 break;
 
             case 1:
-                pupupDescription.text = "ME:… What’s that on my hand?";
+                Description.text = "ME:… What’s that on my hand?";
                 yield return new WaitForSecondsRealtime(5);
                 break;
 
             case 2:
-                pupupDescription.fontStyle = FontStyles.Italic;
-                pupupDescription.text = "Hey Buddy, the witch party was pretty crazy yesterday, huh? You seemed kinda wasted. We brought you to the alchemy room so you won’t be late for your exam. Good luck with it!!!";
+                Description.fontStyle = FontStyles.Italic;
+                Description.text = "Hey Buddy, the witch party was pretty crazy yesterday, huh? You seemed kinda wasted. We brought you to the alchemy room so you won’t be late for your exam. Good luck with it!!!";
                 yield return new WaitForSecondsRealtime(8);
                 break;
             case 3:
-                pupupDescription.fontStyle = FontStyles.Normal;
-                pupupDescription.text = "ME:What … party? What exam?!";
+                Description.fontStyle = FontStyles.Normal;
+                Description.text = "ME:What … party? What exam?!";
                 yield return new WaitForSecondsRealtime(5);
                 break;
 
