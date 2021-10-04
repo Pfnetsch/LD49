@@ -153,9 +153,7 @@ public class Cauldron : MonoBehaviour
 
         if (!isValid && hintAddedToScroll)
         {
-            // Write to TextBox
-            // ... Your knowledge over the ingredients have been expanded
-            // You learned something new
+            GameManager.Narrator.ShowCustomText("You learned something new!");
         }
         else if (!isValid && !hintAddedToScroll)
         {
