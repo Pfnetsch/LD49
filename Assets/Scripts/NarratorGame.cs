@@ -17,7 +17,7 @@ public class NarratorGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NarratorBox.SetActive(false);
+        //NarratorBox.SetActive(false);
     }
 
     void Update()
@@ -43,6 +43,7 @@ public class NarratorGame : MonoBehaviour
 
     public void ShowIntroFromProf()
     {
+        NarratorBox.SetActive(true);
         _introCoroutine = StartCoroutine(ProfIntroRoutine());
     }
 
