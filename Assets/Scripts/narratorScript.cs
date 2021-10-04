@@ -26,7 +26,9 @@ public class narratorScript : MonoBehaviour
         {
             StopCoroutine(_coroutine);
             _idxText++;
-            _coroutine = StartCoroutine(waiter());
+            
+            if (_idxText == 4) SceneManager.LoadScene(2);
+            else _coroutine = StartCoroutine(waiter());
         }
     }
 
