@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HandleIngredients : MonoBehaviour
 {
-    
-    public List<Ingredient> AllIngredients;
     public GameObject PrepArea;
     public List<GameObject> PrepPositions;
 

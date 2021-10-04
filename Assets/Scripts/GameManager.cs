@@ -26,13 +26,18 @@ public class GameManager : MonoBehaviour
 
     public static Ingredient[] ActiveIngredients;
 
-    private Scroll _scrollQuestAndHistory;
+    public Texture2D MousePointerDefault;
+    public Texture2D MousePointerActive;
 
+
+    private Scroll _scrollQuestAndHistory;
     private Collider2D[] _allColliders;
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.SetCursor(MousePointerDefault, new Vector2(0, 0), CursorMode.Auto);
+
         _scrollQuestAndHistory = FindObjectOfType<Scroll>();
 
         _allColliders = FindObjectsOfType<Collider2D>();
@@ -92,8 +97,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //if (inCollider) Cursor.SetCursor()
-        //else 
+        if (inCollider) Cursor.SetCursor(MousePointerActive, new Vector2(0, 0), CursorMode.Auto);
+        else Cursor.SetCursor(MousePointerDefault, new Vector2(0, 0), CursorMode.Auto);
     }
 
     (PotionDB.Potion, PotionDB.Quest) GetQuestForCurrentLevel()
