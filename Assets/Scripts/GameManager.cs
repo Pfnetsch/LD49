@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public Texture2D MousePointerDefault;
     public Texture2D MousePointerActive;
 
+    public NarratorGame Narrator;
+
 
     private Scroll _scrollQuestAndHistory;
     private Collider2D[] _allColliders;
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
         _scrollQuestAndHistory.SetNewQuest(CurrentQuest);
 
         // Write Quest to Text Box
+        if (Narrator != null) Narrator.ShowIntroFromProf();
     }
 
     // Update is called once per frame
