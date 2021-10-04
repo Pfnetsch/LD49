@@ -37,6 +37,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &686870320
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311405409484501047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c496915edb4f356499883c49b02a46a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2782432208581638465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,6 +275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+--- !u!1 &3311405409484501047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+  m_PrefabInstance: {fileID: 2782432208802779649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3311405409484501049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -607,7 +631,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: 'Hair of Gunther '
+      value: Hair of Gunther
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -663,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: 'Hair of Gunther '
+      value: Hair of Gunther
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: Type
