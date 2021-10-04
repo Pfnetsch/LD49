@@ -254,7 +254,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 822284025743467062, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_Name
-      value: 'Wolpertinger Milk '
+      value: Wolpertinger Milk
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_RootOrder
@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
-      value: 'Wolpertinger Milk '
+      value: Wolpertinger Milk
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: Type
