@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
     public Texture2D MousePointerActive;
 
     public static NarratorGame Narrator;
+    private static Scroll ScrollQuestAndHistory;
 
-    private Scroll _scrollQuestAndHistory;
     private Collider2D[] _allColliders;
 
     // Start is called before the first frame update
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.SetCursor(MousePointerDefault, new Vector2(0, 0), CursorMode.Auto);
 
-        _scrollQuestAndHistory = FindObjectOfType<Scroll>();
+        ScrollQuestAndHistory = FindObjectOfType<Scroll>();
 
         Narrator = FindObjectOfType<NarratorGame>();
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         // Retrieve first Quest
         SetQuestForNextLevel(false);
 
-        _scrollQuestAndHistory.SetNewQuest(CurrentQuest);
+        ScrollQuestAndHistory.SetNewQuest(CurrentQuest);
 
         // Write Quest to Text Box
         if (Narrator != null)
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
             {
                 if (ingredientHit.transform.CompareTag("MiniScroll"))
                 {
-                    _scrollQuestAndHistory.EnableScroll(true);
+                    ScrollQuestAndHistory.EnableScroll(true);
                 }
             }
         }
@@ -125,6 +125,8 @@ public class GameManager : MonoBehaviour
 
         CurrentPotion = poQu.Item1;
         CurrentQuest = poQu.Item2;
+
+        if (ScrollQuestAndHistory != null) ScrollQuestAndHistory.SetNewQuest(CurrentQuest);
 
         if (Narrator != null)
         {
