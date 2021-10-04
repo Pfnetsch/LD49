@@ -38,7 +38,7 @@ public class Cauldron : MonoBehaviour
         {
             PotionDB.Potion potion = new PotionDB.Potion(GameManager.ActiveIngredients[0].id, GameManager.ActiveIngredients[1].id, GameManager.ActiveIngredients[2].id, Temp, Lumi);
 
-            if (PotionDB.CheckIfCorrectPotion(GameManager.CurrentPotionTask, potion))
+            if (PotionDB.CheckIfCorrectPotion(GameManager.CurrentPotion, potion))
             {
                 // Write to TextBox "That's it!"
 
@@ -56,7 +56,7 @@ public class Cauldron : MonoBehaviour
                 // Potion is valid but was not requested
                 // Set Animator
 
-                int correctIngredients = PotionDB.NumberOfCorrectIngredients(GameManager.CurrentPotionTask, potion, out string wrongOrRightIngredient);
+                int correctIngredients = PotionDB.NumberOfCorrectIngredients(GameManager.CurrentPotion, potion, out string wrongOrRightIngredient);
 
                 int rndValidText = Random.Range(0, TextDB.PotionTextsValid.Count - 1);
 

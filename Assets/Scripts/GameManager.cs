@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     public static GameLevel Level = GameLevel.Apprentice;
     public static GameState State = GameState.Idle;
 
-    public static PotionDB.Potion CurrentPotionTask;
+    public static PotionDB.Potion CurrentPotion;
+    public static PotionDB.Quest CurrentQuest;
 
     public static Ingredient[] ActiveIngredients;
 
@@ -48,11 +49,12 @@ public class GameManager : MonoBehaviour
         ActiveIngredients = new Ingredient[3];
 
         // Retrieve first Quest
-        var quest = GetQuestForCurrentLevel();
+        var poQu = GetQuestForCurrentLevel();
 
-        CurrentPotionTask = quest.Item1;
+        CurrentPotion = poQu.Item1;
+        CurrentQuest = poQu.Item2;
 
-        _scrollQuestAndHistory.SetNewQuest(quest.Item2);
+        _scrollQuestAndHistory.SetNewQuest(CurrentQuest);
 
         // Write Quest to Text Box
     }
