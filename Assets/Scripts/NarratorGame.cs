@@ -30,7 +30,11 @@ public class NarratorGame : MonoBehaviour
                 StopCoroutine(_introCoroutine);
                 _idxText++;
 
-                if (_idxText == 4) NarratorBox.SetActive(false);
+                if (_idxText == 7)
+                {
+                    NarratorBox.SetActive(false);
+                    _switchToQuest = true;
+                }
                 else _introCoroutine = StartCoroutine(ProfIntroRoutine());
             }
 
@@ -81,7 +85,7 @@ public class NarratorGame : MonoBehaviour
         }
         Description.text += "potion:\n";
         Description.text += _currentQuest.Name + "\n\n";
-        Description.text += _currentQuest.Description + "\n";
+        Description.text += _currentQuest.Description + "\n\n";
         Description.text += _currentQuest.Riddle;
 
         _questCoroutine = StartCoroutine(QuestRoutine());

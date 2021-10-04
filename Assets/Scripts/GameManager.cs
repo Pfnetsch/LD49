@@ -69,14 +69,14 @@ public class GameManager : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            List<string> unlocks = new List<string>();
-            Debug.Log("Space has been pressed");
-            //PopUpSystem pop = GameObject
-            PopUpSystem pop = GetComponent<PopUpSystem>();
-            pop.PopUp("busen", "busen sin schon ziemlich nice!", unlocks);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    List<string> unlocks = new List<string>();
+        //    Debug.Log("Space has been pressed");
+        //    //PopUpSystem pop = GameObject
+        //    PopUpSystem pop = GetComponent<PopUpSystem>();
+        //    pop.PopUp("busen", "busen sin schon ziemlich nice!", unlocks);
+        //}
 
         if (Input.GetMouseButtonDown(0))
         {
