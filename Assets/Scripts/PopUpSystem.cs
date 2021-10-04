@@ -19,7 +19,10 @@ public class PopUpSystem : MonoBehaviour
     }
     public void PopDown()
     {
-        popUpBox.SetActive(false);
-        animator.SetTrigger("close");
+        if (popUpBox.activeSelf)
+        {
+            popUpBox.SetActive(false);
+            animator.SetTrigger("close");
+        }
     }
 }

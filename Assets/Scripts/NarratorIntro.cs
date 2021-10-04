@@ -34,6 +34,8 @@ public class NarratorIntro : MonoBehaviour
 
     IEnumerator waiter()
     {
+        bool stop = false;
+
         switch (_idxText)
         {
             case 0:
@@ -58,11 +60,12 @@ public class NarratorIntro : MonoBehaviour
                 break;
 
             default:
+                stop = true;
                 SceneManager.LoadScene(2);
                 break;
         }
 
         _idxText++;
-        _coroutine = StartCoroutine(waiter());
+        if (!stop) _coroutine = StartCoroutine(waiter());
     }
 }
