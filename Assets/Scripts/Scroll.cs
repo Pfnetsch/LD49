@@ -34,14 +34,19 @@ public class Scroll : MonoBehaviour
             _scrollRect.verticalNormalizedPosition = _scrollRect.verticalNormalizedPosition + Time.deltaTime * 0.5f * (_scrollActive == 1 ? 1 : -1);
     }
 
-    public void ButtonOnDown(bool scrollUp)
+    public void ButtonArrowOnDown(bool scrollUp)
     {
         _scrollActive = scrollUp ? 1 : 2;
     }
 
-    public void ButtonOnUp()
+    public void ButtonArrowOnUp()
     {
         _scrollActive = 0;
+    }
+
+    public void ButtonXDown()
+    {
+        EnableScroll(false);
     }
 
     public void EnableScroll(bool enable)
