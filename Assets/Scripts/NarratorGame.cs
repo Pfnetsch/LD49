@@ -116,7 +116,7 @@ public class NarratorGame : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1);
         NarratorBox.SetActive(true);
-        yield return new WaitForSecondsRealtime(20);
+        yield return new WaitForSecondsRealtime(30);
         NarratorBox.SetActive(false);
     }
 

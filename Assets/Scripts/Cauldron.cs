@@ -39,7 +39,7 @@ public class Cauldron : MonoBehaviour
         }
         else if (GameManager.State == GameManager.GameState.PotionReady)
         {
-            PotionDB.Potion potion = new PotionDB.Potion(GameManager.ActiveIngredients[0].id, GameManager.ActiveIngredients[1].id, GameManager.ActiveIngredients[2].id, Temp, Lumi);
+            PotionDB.Potion potion = new PotionDB.Potion(GameManager.ActiveIngredients[1].id, GameManager.ActiveIngredients[2].id, GameManager.ActiveIngredients[0].id, Temp, Lumi);
 
             if (PotionDB.CheckIfCorrectPotion(GameManager.CurrentPotion, potion))
             {
