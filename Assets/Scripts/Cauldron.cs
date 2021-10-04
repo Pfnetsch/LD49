@@ -94,7 +94,7 @@ public class Cauldron : MonoBehaviour
 
                 string unstableHint = TextDB.PotionTextsUnstable[rndUnstableText];
 
-                if (learnedSomething) unstableHint += "\n\n" + "You learned something!";
+                if (learnedSomething) unstableHint += "\n\n" + "However, you learned something!";
 
                 GameManager.Narrator.ShowCustomText(unstableHint);
 
