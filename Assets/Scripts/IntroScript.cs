@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class narratorScript : MonoBehaviour
+public class IntroScript : MonoBehaviour
 {
     public GameObject popUpBox;
     public TMP_Text pupupDescription;

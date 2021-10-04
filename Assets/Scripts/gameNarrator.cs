@@ -5,21 +5,21 @@ using TMPro;
 
 public class gameNarrator : MonoBehaviour
 {
-    public GameObject popUpBox;
+    public GameObject narratorBox;
     public TMP_Text pupupDescription;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        popUpBox.SetActive(true);
+        narratorBox.SetActive(true);
         StartCoroutine(waiter2());
     }
     IEnumerator waiter2()
     {
         pupupDescription.text = "Unknown voice: YOU ARE LATE! I SHOULD LET YOU FAIL IMMEDIATELY! … Lucky for you I have high hopes for your future. As my apprentice, I expect more from you. So let’s begin.";
         yield return new WaitForSecondsRealtime(5);
-        popUpBox.SetActive(false);
+        narratorBox.SetActive(false);
     }
     IEnumerator waiter()
     {
@@ -59,7 +59,7 @@ public class gameNarrator : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(5);
 
-        popUpBox.SetActive(false);
+        narratorBox.SetActive(false);
 
 
     }
