@@ -9,7 +9,7 @@ public class BezierCurve : MonoBehaviour
 
     private Vector2 gizmosPosition;
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         for (float t = 0; t <= 1; t += 0.05f)
         {
