@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightLogic : MonoBehaviour
+public class TorchLogic : MonoBehaviour
 {
     GameObject ld;
     SpriteRenderer sprite;
@@ -12,7 +12,6 @@ public class LightLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.SetTrigger("lighton");
         ld = GameObject.Find("LightRect");
         sprite = ld.GetComponent<SpriteRenderer>();
         sprite.color = new Color(.1f, .1f, .3f, 0f);
@@ -32,20 +31,20 @@ public class LightLogic : MonoBehaviour
 
             if (collisionHit)
             {
-                if (collisionHit.transform.CompareTag("Light"))
+                if (collisionHit.transform.CompareTag("Torch"))
                 {
                     if(isLit == true)
                     {
+                        animator.SetTrigger("smoke");
                         sprite.color = new Color(.1f, .1f, .3f, .5f);
                         isLit = false;
-                        animator.SetTrigger("lightoff");
                         cauldron.Lumi = PotionDB.Luminosity.Dark;
                     }
                     else
                     {
+                        animator.SetTrigger("burn");
                         sprite.color = new Color(.1f, .1f, .3f, 0f);
                         isLit = true;
-                        animator.SetTrigger("lighton");
                         cauldron.Lumi = PotionDB.Luminosity.Bright;
                     }
                 }
