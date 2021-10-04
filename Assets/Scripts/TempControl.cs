@@ -18,7 +18,7 @@ public class TempControl : MonoBehaviour
         // Find cauldron in scene
         _cauldron = FindObjectOfType<Cauldron>();
 
-        foreach (Transform child in transform)
+        foreach (Transform child in _cauldron.transform)
         {
             if (child.name.Contains("Ice")) _ice = child.gameObject;
             else if (child.name.Contains("Fire")) _fire = child.gameObject;
