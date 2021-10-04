@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
         Idle,
         Combining,
         Crafting,
-        PotionReady
+        PotionReady,
+        CleanUp
     }
 
     public static GameLevel Level = GameLevel.Nobody;

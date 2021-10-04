@@ -12,6 +12,8 @@ public class Cauldron : MonoBehaviour
     private Scroll _scrollQuestAndHistory;
     private FinishedPotions _finishedPotions;
 
+    private float _cleanUpStep = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +52,7 @@ public class Cauldron : MonoBehaviour
 
                 // The right potion was created - Wuhu
                 // Set Animator
-                GameManager.State = GameManager.GameState.PotionReady;
+                GameManager.State = GameManager.GameState.CleanUp;
                 animator.SetTrigger("idle");
             }
             else if (CheckIfPotionIsValidAndUpdateScroll())
@@ -79,22 +81,39 @@ public class Cauldron : MonoBehaviour
                 // Add to History
                 _scrollQuestAndHistory.AddHistoryItem("Stable: " + potion.ToString());
 
-                GameManager.State = GameManager.GameState.PotionReady;
+                GameManager.State = GameManager.GameState.CleanUp;
                 animator.SetTrigger("idle");
             }
             else 
             {
                 int rndUnstableText = Random.Range(0, TextDB.PotionTextsUnstable.Count - 1);
 
-                // TextBox = TextDB.PotionTextsUnstable[rndUnstableText];
+                GameManager.Narrator.ShowCustomText(TextDB.PotionTextsUnstable[rndUnstableText]);
 
                 // Add to History
                 _scrollQuestAndHistory.AddHistoryItem("Unstable: " + potion.ToString());
 
                 // Potion is unstable
                 // Set Animator
-                GameManager.State = GameManager.GameState.PotionReady;
+                GameManager.State = GameManager.GameState.CleanUp;
                 animator.SetTrigger("unstable");
+            }
+        }
+        else if (GameManager.State == GameManager.GameState.CleanUp)
+        {
+            _cleanUpStep += Time.deltaTime * 0.6f;
+
+            if (_cleanUpStep >= 1f)
+            {
+                GameManager.State = GameManager.GameState.Idle;
+
+                animator.SetTrigger("idle");
+
+                GameManager.ActiveIngredients[0].BackToDefaultPosition();
+                GameManager.ActiveIngredients[1].BackToDefaultPosition();
+                GameManager.ActiveIngredients[2].BackToDefaultPosition();
+
+                _cleanUpStep = 0f;
             }
         }
     }
