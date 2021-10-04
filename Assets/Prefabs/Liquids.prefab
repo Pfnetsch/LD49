@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.977055
+      value: -114.2
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1382573
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -91,6 +91,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f49ac165a0fff047b4d49ca731320f0, type: 3}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
       value: Glacier Water
@@ -108,6 +116,22 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 23.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -133,11 +157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.977055
+      value: -132.8
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1382573
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -171,6 +195,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 34d49b7ad8e216240b9e27fa0583e4a2, type: 3}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
       value: Rainbow Honey
@@ -189,6 +221,22 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 14.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -214,11 +262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.977055
+      value: -138.5
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1382573
+      value: -55.6
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -252,6 +300,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09921a465b054f243a46b14381a52e74, type: 3}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
       value: 'Wolpertinger Milk '
@@ -269,6 +325,22 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 19.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -294,11 +366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.977055
+      value: -138
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1382573
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -332,6 +404,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cec8921e8b2c7b4eb5e34bb165f322f, type: 3}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
       value: Lukewarm Lava
@@ -349,6 +429,22 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 12.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -374,11 +470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.3
+      value: -114.9
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58.8
+      value: 30.7
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -412,6 +508,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1717f1d35272cb44487897ff50cdf8f1, type: 3}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
       value: Sunshine Drops
@@ -429,6 +533,22 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 12.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 17.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
@@ -454,11 +574,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.977055
+      value: -114.6
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1382573
+      value: -29.6
       objectReference: {fileID: 0}
     - target: {fileID: 822284025743467064, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -492,6 +612,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3fa9ec6de31092a4792425ce5031839e, type: 3}
+    - target: {fileID: 822284025743467065, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: id
       value: Onion Tears
@@ -509,6 +637,22 @@ PrefabInstance:
     - target: {fileID: 822284025743467067, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
       propertyPath: RequiredLumi
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 10.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 14.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193115144587420639, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456eec51924920649882f9a408a7f7a6, type: 3}
