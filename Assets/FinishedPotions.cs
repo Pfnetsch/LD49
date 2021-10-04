@@ -49,7 +49,7 @@ public class FinishedPotions : MonoBehaviour
         // Curve Movement
         if (_animationPart == FinishedPotionAnimation.CurveMovement && _potionToReveal != null && _animationStep <= 1f)
         {
-            Transform[] pathPoints = _potionToReveal.GetComponents<Transform>();    // 2 entries not needed - Parent and PotionSprite
+            Transform[] pathPoints = _potionToReveal.parent.GetComponentsInChildren<Transform>();    // 2 entries not needed - Parent and PotionSprite
 
             Vector2 _positionOnRoute = Mathf.Pow(1 - _animationStep, 3) * pathPoints[2].position + 3 * Mathf.Pow(1 - _animationStep, 2) * _animationStep * pathPoints[3].position + 3 * (1 - _animationStep) * Mathf.Pow(_animationStep, 2) * pathPoints[4].position + Mathf.Pow(_animationStep, 3) * pathPoints[5].position;
 
@@ -61,11 +61,11 @@ public class FinishedPotions : MonoBehaviour
 
     public void RevealFinishedPotion(int potionTextureIndex)
     {
-        _potionToReveal = GetComponentsInChildren<SpriteRenderer>()[(int)GameManager.Level].transform;
+        _potionToReveal = GetComponentsInChildren<SpriteRenderer>(true)[(int)GameManager.Level].transform;
 
         _potionToReveal.localScale = new Vector3(0f, 0f);
 
-        _potionToReveal.gameObject.SetActive(true);
+        _potionToReveal.parent.gameObject.SetActive(true);
 
         _animationPart = FinishedPotionAnimation.Reveal;
     }
